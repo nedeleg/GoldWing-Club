@@ -1,0 +1,1242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		597AC6832D1187DF00D1DB79 /* GoldWing_ClubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6822D1187DF00D1DB79 /* GoldWing_ClubApp.swift */; };
+		597AC6852D1187DF00D1DB79 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6842D1187DF00D1DB79 /* Persistence.swift */; };
+		597AC6882D1187DF00D1DB79 /* GoldWing_Club.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6862D1187DF00D1DB79 /* GoldWing_Club.xcdatamodeld */; };
+		597AC68A2D1187DF00D1DB79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6892D1187DF00D1DB79 /* ContentView.swift */; };
+		597AC68C2D1187E000D1DB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597AC68B2D1187E000D1DB79 /* Assets.xcassets */; };
+		597AC6902D1187E000D1DB79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597AC68F2D1187E000D1DB79 /* Preview Assets.xcassets */; };
+		597AC69A2D1187E000D1DB79 /* GoldWing_ClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6992D1187E000D1DB79 /* GoldWing_ClubTests.swift */; };
+		597AC6A42D1187E000D1DB79 /* GoldWing_ClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6A32D1187E000D1DB79 /* GoldWing_ClubUITests.swift */; };
+		597AC6A62D1187E000D1DB79 /* GoldWing_ClubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6A52D1187E000D1DB79 /* GoldWing_ClubUITestsLaunchTests.swift */; };
+		597AC6B52D11880400D1DB79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 597AC6B42D11880400D1DB79 /* GoogleService-Info.plist */; };
+		597AC6B82D11884100D1DB79 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6B72D11884100D1DB79 /* FirebaseAnalytics */; };
+		597AC6BA2D11884100D1DB79 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6B92D11884100D1DB79 /* FirebaseAnalyticsOnDeviceConversion */; };
+		597AC6BC2D11884100D1DB79 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6BB2D11884100D1DB79 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		597AC6BE2D11884100D1DB79 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6BD2D11884100D1DB79 /* FirebaseAppCheck */; };
+		597AC6C02D11884100D1DB79 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6BF2D11884100D1DB79 /* FirebaseAppDistribution-Beta */; };
+		597AC6C22D11884100D1DB79 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6C12D11884100D1DB79 /* FirebaseAuth */; };
+		597AC6C42D11884100D1DB79 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6C32D11884100D1DB79 /* FirebaseAuthCombine-Community */; };
+		597AC6C62D11884100D1DB79 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6C52D11884100D1DB79 /* FirebaseCore */; };
+		597AC6C82D11884100D1DB79 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6C72D11884100D1DB79 /* FirebaseCrashlytics */; };
+		597AC6CA2D11884100D1DB79 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6C92D11884100D1DB79 /* FirebaseDatabase */; };
+		597AC6CC2D11884100D1DB79 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6CB2D11884100D1DB79 /* FirebaseDynamicLinks */; };
+		597AC6CE2D11884100D1DB79 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6CD2D11884100D1DB79 /* FirebaseFirestore */; };
+		597AC6D02D11884100D1DB79 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6CF2D11884100D1DB79 /* FirebaseFirestoreCombine-Community */; };
+		597AC6D22D11884100D1DB79 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6D12D11884100D1DB79 /* FirebaseFunctions */; };
+		597AC6D42D11884100D1DB79 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6D32D11884100D1DB79 /* FirebaseFunctionsCombine-Community */; };
+		597AC6D62D11884100D1DB79 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6D52D11884100D1DB79 /* FirebaseInAppMessaging-Beta */; };
+		597AC6D82D11884100D1DB79 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6D72D11884100D1DB79 /* FirebaseInstallations */; };
+		597AC6DA2D11884100D1DB79 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6D92D11884100D1DB79 /* FirebaseMLModelDownloader */; };
+		597AC6DC2D11884100D1DB79 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6DB2D11884100D1DB79 /* FirebaseMessaging */; };
+		597AC6DE2D11884100D1DB79 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6DD2D11884100D1DB79 /* FirebasePerformance */; };
+		597AC6E02D11884100D1DB79 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6DF2D11884100D1DB79 /* FirebaseRemoteConfig */; };
+		597AC6E22D11884100D1DB79 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6E12D11884100D1DB79 /* FirebaseStorage */; };
+		597AC6E42D11884100D1DB79 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6E32D11884100D1DB79 /* FirebaseStorageCombine-Community */; };
+		597AC6E62D11884100D1DB79 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 597AC6E52D11884100D1DB79 /* FirebaseVertexAI */; };
+		597AC6E82D11897D00D1DB79 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6E72D11897D00D1DB79 /* ContactViewModel.swift */; };
+		597AC6EA2D11899700D1DB79 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6E92D11899700D1DB79 /* DataService.swift */; };
+		597AC6EC2D1189E800D1DB79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6EB2D1189E800D1DB79 /* AppDelegate.swift */; };
+		597AC6EE2D118A0300D1DB79 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6ED2D118A0300D1DB79 /* MainView.swift */; };
+		597AC6F22D1193EB00D1DB79 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6F12D1193EB00D1DB79 /* ContactRow.swift */; };
+		597AC6F42D119F8E00D1DB79 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6F32D119F8E00D1DB79 /* ContactDetailView.swift */; };
+		597AC6F62D11DC5D00D1DB79 /* ContactEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6F52D11DC5D00D1DB79 /* ContactEditView.swift */; };
+		597AC6FA2D11FE1200D1DB79 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AC6F92D11FE1200D1DB79 /* ContactListView.swift */; };
+		598EDD5E2D18050900AACC48 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD5D2D18050900AACC48 /* ProfileView.swift */; };
+		598EDD602D18051900AACC48 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD5F2D18051900AACC48 /* HomeView.swift */; };
+		598EDD622D18052D00AACC48 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD612D18052D00AACC48 /* AboutView.swift */; };
+		598EDD642D18054400AACC48 /* InfosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD632D18054400AACC48 /* InfosListView.swift */; };
+		598EDD662D18061200AACC48 /* MainSecureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD652D18061200AACC48 /* MainSecureView.swift */; };
+		598EDD702D19889B00AACC48 /* InfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD6F2D19889B00AACC48 /* InfoDetailView.swift */; };
+		598EDD722D19892500AACC48 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD712D19892500AACC48 /* InfoRow.swift */; };
+		598EDD752D19D2C200AACC48 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD742D19D2C200AACC48 /* InfoViewModel.swift */; };
+		598EDD772D19E69A00AACC48 /* InfoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD762D19E69A00AACC48 /* InfoEditView.swift */; };
+		598EDD7B2D19EA4B00AACC48 /* goldwing-club-france_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 598EDD7A2D19EA4B00AACC48 /* goldwing-club-france_app.png */; };
+		598EDD7D2D1C00E300AACC48 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD7C2D1C00E300AACC48 /* EventEditView.swift */; };
+		598EDD7F2D1C1B1500AACC48 /* InfoEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD7E2D1C1B1500AACC48 /* InfoEditRow.swift */; };
+		598EDD832D1EBF4B00AACC48 /* EventEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD822D1EBF4B00AACC48 /* EventEditRow.swift */; };
+		598EDD852D1FD11500AACC48 /* ClubEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD842D1FD11500AACC48 /* ClubEditRow.swift */; };
+		598EDD932D21235000AACC48 /* KatraplaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD922D21235000AACC48 /* KatraplaListView.swift */; };
+		598EDD982D21293D00AACC48 /* KatraplaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD972D21293D00AACC48 /* KatraplaViewModel.swift */; };
+		598EDD9A2D21311400AACC48 /* KatraplaEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD992D21311400AACC48 /* KatraplaEditView.swift */; };
+		598EDD9C2D21316600AACC48 /* KatraplaEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD9B2D21316600AACC48 /* KatraplaEditRow.swift */; };
+		598EDD9E2D21317200AACC48 /* KatraplaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD9D2D21317200AACC48 /* KatraplaDetailView.swift */; };
+		598EDDA02D21318700AACC48 /* KatraplaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDD9F2D21318700AACC48 /* KatraplaRow.swift */; };
+		598EDDA22D218A0E00AACC48 /* WingNewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDA12D218A0E00AACC48 /* WingNewListView.swift */; };
+		598EDDA42D218A2F00AACC48 /* WingNewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDA32D218A2F00AACC48 /* WingNewDetailView.swift */; };
+		598EDDA62D218A4900AACC48 /* WingNewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDA52D218A4900AACC48 /* WingNewRow.swift */; };
+		598EDDA82D218A5500AACC48 /* WingNewEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDA72D218A5500AACC48 /* WingNewEditRow.swift */; };
+		598EDDAA2D218A6700AACC48 /* WingNewEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDA92D218A6700AACC48 /* WingNewEditView.swift */; };
+		598EDDAC2D218A8000AACC48 /* WingNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDAB2D218A8000AACC48 /* WingNewViewModel.swift */; };
+		598EDDAE2D24356300AACC48 /* ContactEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDAD2D24356300AACC48 /* ContactEditRow.swift */; };
+		598EDDB02D24437000AACC48 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDAF2D24437000AACC48 /* MoreView.swift */; };
+		598EDDB22D24553400AACC48 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EDDB12D24553400AACC48 /* ImagePicker.swift */; };
+		59B16AEB2D15D73300E47F06 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AEA2D15D73300E47F06 /* EventViewModel.swift */; };
+		59B16AED2D15EFDD00E47F06 /* ContactAnnivListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AEC2D15EFDD00E47F06 /* ContactAnnivListView.swift */; };
+		59B16AEF2D160C3D00E47F06 /* EventTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AEE2D160C3D00E47F06 /* EventTypeListView.swift */; };
+		59B16AF12D16185800E47F06 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AF02D16185800E47F06 /* EventDetailView.swift */; };
+		59B16AF32D1618AE00E47F06 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AF22D1618AE00E47F06 /* EventRow.swift */; };
+		59B16AF52D16A84C00E47F06 /* GoldWing_ClubAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AF42D16A84C00E47F06 /* GoldWing_ClubAppView.swift */; };
+		59B16AF92D16A96600E47F06 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AF82D16A96600E47F06 /* AuthViewModel.swift */; };
+		59B16AFC2D16AB0900E47F06 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 59B16AFB2D16AB0900E47F06 /* GoogleSignIn */; };
+		59B16AFE2D16AB0900E47F06 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59B16AFD2D16AB0900E47F06 /* GoogleSignInSwift */; };
+		59D9F69B2D15CBC6001BA25C /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F69A2D15CBC6001BA25C /* GifImage.swift */; };
+		59D9F6AD2D15CC12001BA25C /* Carte_club15.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F69D2D15CC12001BA25C /* Carte_club15.gif */; };
+		59D9F6AE2D15CC12001BA25C /* Carte_club10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F69E2D15CC12001BA25C /* Carte_club10.gif */; };
+		59D9F6AF2D15CC12001BA25C /* Carte_club9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F69F2D15CC12001BA25C /* Carte_club9.gif */; };
+		59D9F6B02D15CC12001BA25C /* Carte_club8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A02D15CC12001BA25C /* Carte_club8.gif */; };
+		59D9F6B12D15CC12001BA25C /* Carte_club2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A12D15CC12001BA25C /* Carte_club2.gif */; };
+		59D9F6B22D15CC12001BA25C /* Carte_club6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A22D15CC12001BA25C /* Carte_club6.gif */; };
+		59D9F6B32D15CC12001BA25C /* Carte_club13.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A32D15CC12001BA25C /* Carte_club13.gif */; };
+		59D9F6B42D15CC12001BA25C /* Carte_club3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A42D15CC12001BA25C /* Carte_club3.gif */; };
+		59D9F6B52D15CC12001BA25C /* Carte_club5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A52D15CC12001BA25C /* Carte_club5.gif */; };
+		59D9F6B62D15CC12001BA25C /* Carte_club14.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A62D15CC12001BA25C /* Carte_club14.gif */; };
+		59D9F6B72D15CC12001BA25C /* Carte_fedefr.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A72D15CC12001BA25C /* Carte_fedefr.gif */; };
+		59D9F6B82D15CC12001BA25C /* Carte_club1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A82D15CC12001BA25C /* Carte_club1.gif */; };
+		59D9F6B92D15CC12001BA25C /* Carte_club12.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6A92D15CC12001BA25C /* Carte_club12.gif */; };
+		59D9F6BA2D15CC12001BA25C /* Carte_club7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6AA2D15CC12001BA25C /* Carte_club7.gif */; };
+		59D9F6BB2D15CC12001BA25C /* Carte_club4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6AB2D15CC12001BA25C /* Carte_club4.gif */; };
+		59D9F6BC2D15CC12001BA25C /* Carte_club11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F6AC2D15CC12001BA25C /* Carte_club11.gif */; };
+		59D9F6C22D15CC68001BA25C /* ClubEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6BD2D15CC68001BA25C /* ClubEditView.swift */; };
+		59D9F6C32D15CC68001BA25C /* ClubRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6BE2D15CC68001BA25C /* ClubRow.swift */; };
+		59D9F6C42D15CC68001BA25C /* ClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6BF2D15CC68001BA25C /* ClubViewModel.swift */; };
+		59D9F6C52D15CC68001BA25C /* ClubDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6C02D15CC68001BA25C /* ClubDetailView.swift */; };
+		59D9F6C62D15CC68001BA25C /* ClubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6C12D15CC68001BA25C /* ClubListView.swift */; };
+		59D9F6CA2D15CCAA001BA25C /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6C82D15CCAA001BA25C /* EventListView.swift */; };
+		59D9F6CD2D15CCE8001BA25C /* ContactClubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F6CC2D15CCE8001BA25C /* ContactClubListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		597AC6962D1187E000D1DB79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 597AC6772D1187DF00D1DB79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 597AC67E2D1187DF00D1DB79;
+			remoteInfo = "GoldWing Club";
+		};
+		597AC6A02D1187E000D1DB79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 597AC6772D1187DF00D1DB79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 597AC67E2D1187DF00D1DB79;
+			remoteInfo = "GoldWing Club";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		597AC67F2D1187DF00D1DB79 /* GoldWing Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoldWing Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		597AC6822D1187DF00D1DB79 /* GoldWing_ClubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldWing_ClubApp.swift; sourceTree = "<group>"; };
+		597AC6842D1187DF00D1DB79 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		597AC6872D1187DF00D1DB79 /* GoldWing_Club.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldWing_Club.xcdatamodel; sourceTree = "<group>"; };
+		597AC6892D1187DF00D1DB79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		597AC68B2D1187E000D1DB79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		597AC68D2D1187E000D1DB79 /* GoldWing_Club.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoldWing_Club.entitlements; sourceTree = "<group>"; };
+		597AC68F2D1187E000D1DB79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		597AC6952D1187E000D1DB79 /* GoldWing ClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoldWing ClubTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		597AC6992D1187E000D1DB79 /* GoldWing_ClubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldWing_ClubTests.swift; sourceTree = "<group>"; };
+		597AC69F2D1187E000D1DB79 /* GoldWing ClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoldWing ClubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		597AC6A32D1187E000D1DB79 /* GoldWing_ClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldWing_ClubUITests.swift; sourceTree = "<group>"; };
+		597AC6A52D1187E000D1DB79 /* GoldWing_ClubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldWing_ClubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		597AC6B22D1187F200D1DB79 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597AC6B42D11880400D1DB79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		597AC6E72D11897D00D1DB79 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		597AC6E92D11899700D1DB79 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		597AC6EB2D1189E800D1DB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		597AC6ED2D118A0300D1DB79 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		597AC6F12D1193EB00D1DB79 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		597AC6F32D119F8E00D1DB79 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		597AC6F52D11DC5D00D1DB79 /* ContactEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditView.swift; sourceTree = "<group>"; };
+		597AC6F92D11FE1200D1DB79 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		598EDD5D2D18050900AACC48 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		598EDD5F2D18051900AACC48 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		598EDD612D18052D00AACC48 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		598EDD632D18054400AACC48 /* InfosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosListView.swift; sourceTree = "<group>"; };
+		598EDD652D18061200AACC48 /* MainSecureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSecureView.swift; sourceTree = "<group>"; };
+		598EDD6F2D19889B00AACC48 /* InfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailView.swift; sourceTree = "<group>"; };
+		598EDD712D19892500AACC48 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
+		598EDD742D19D2C200AACC48 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		598EDD762D19E69A00AACC48 /* InfoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEditView.swift; sourceTree = "<group>"; };
+		598EDD7A2D19EA4B00AACC48 /* goldwing-club-france_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goldwing-club-france_app.png"; sourceTree = "<group>"; };
+		598EDD7C2D1C00E300AACC48 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		598EDD7E2D1C1B1500AACC48 /* InfoEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEditRow.swift; sourceTree = "<group>"; };
+		598EDD822D1EBF4B00AACC48 /* EventEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditRow.swift; sourceTree = "<group>"; };
+		598EDD842D1FD11500AACC48 /* ClubEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubEditRow.swift; sourceTree = "<group>"; };
+		598EDD922D21235000AACC48 /* KatraplaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatraplaListView.swift; sourceTree = "<group>"; };
+		598EDD972D21293D00AACC48 /* KatraplaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatraplaViewModel.swift; sourceTree = "<group>"; };
+		598EDD992D21311400AACC48 /* KatraplaEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatraplaEditView.swift; sourceTree = "<group>"; };
+		598EDD9B2D21316600AACC48 /* KatraplaEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatraplaEditRow.swift; sourceTree = "<group>"; };
+		598EDD9D2D21317200AACC48 /* KatraplaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatraplaDetailView.swift; sourceTree = "<group>"; };
+		598EDD9F2D21318700AACC48 /* KatraplaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatraplaRow.swift; sourceTree = "<group>"; };
+		598EDDA12D218A0E00AACC48 /* WingNewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingNewListView.swift; sourceTree = "<group>"; };
+		598EDDA32D218A2F00AACC48 /* WingNewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingNewDetailView.swift; sourceTree = "<group>"; };
+		598EDDA52D218A4900AACC48 /* WingNewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingNewRow.swift; sourceTree = "<group>"; };
+		598EDDA72D218A5500AACC48 /* WingNewEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingNewEditRow.swift; sourceTree = "<group>"; };
+		598EDDA92D218A6700AACC48 /* WingNewEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingNewEditView.swift; sourceTree = "<group>"; };
+		598EDDAB2D218A8000AACC48 /* WingNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingNewViewModel.swift; sourceTree = "<group>"; };
+		598EDDAD2D24356300AACC48 /* ContactEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditRow.swift; sourceTree = "<group>"; };
+		598EDDAF2D24437000AACC48 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		598EDDB12D24553400AACC48 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		59B16AEA2D15D73300E47F06 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		59B16AEC2D15EFDD00E47F06 /* ContactAnnivListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAnnivListView.swift; sourceTree = "<group>"; };
+		59B16AEE2D160C3D00E47F06 /* EventTypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeListView.swift; sourceTree = "<group>"; };
+		59B16AF02D16185800E47F06 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		59B16AF22D1618AE00E47F06 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		59B16AF42D16A84C00E47F06 /* GoldWing_ClubAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldWing_ClubAppView.swift; sourceTree = "<group>"; };
+		59B16AF82D16A96600E47F06 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		59D9F69A2D15CBC6001BA25C /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		59D9F69D2D15CC12001BA25C /* Carte_club15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club15.gif; sourceTree = "<group>"; };
+		59D9F69E2D15CC12001BA25C /* Carte_club10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club10.gif; sourceTree = "<group>"; };
+		59D9F69F2D15CC12001BA25C /* Carte_club9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club9.gif; sourceTree = "<group>"; };
+		59D9F6A02D15CC12001BA25C /* Carte_club8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club8.gif; sourceTree = "<group>"; };
+		59D9F6A12D15CC12001BA25C /* Carte_club2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club2.gif; sourceTree = "<group>"; };
+		59D9F6A22D15CC12001BA25C /* Carte_club6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club6.gif; sourceTree = "<group>"; };
+		59D9F6A32D15CC12001BA25C /* Carte_club13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club13.gif; sourceTree = "<group>"; };
+		59D9F6A42D15CC12001BA25C /* Carte_club3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club3.gif; sourceTree = "<group>"; };
+		59D9F6A52D15CC12001BA25C /* Carte_club5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club5.gif; sourceTree = "<group>"; };
+		59D9F6A62D15CC12001BA25C /* Carte_club14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club14.gif; sourceTree = "<group>"; };
+		59D9F6A72D15CC12001BA25C /* Carte_fedefr.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_fedefr.gif; sourceTree = "<group>"; };
+		59D9F6A82D15CC12001BA25C /* Carte_club1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club1.gif; sourceTree = "<group>"; };
+		59D9F6A92D15CC12001BA25C /* Carte_club12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club12.gif; sourceTree = "<group>"; };
+		59D9F6AA2D15CC12001BA25C /* Carte_club7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club7.gif; sourceTree = "<group>"; };
+		59D9F6AB2D15CC12001BA25C /* Carte_club4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club4.gif; sourceTree = "<group>"; };
+		59D9F6AC2D15CC12001BA25C /* Carte_club11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club11.gif; sourceTree = "<group>"; };
+		59D9F6BD2D15CC68001BA25C /* ClubEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEditView.swift; sourceTree = "<group>"; };
+		59D9F6BE2D15CC68001BA25C /* ClubRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubRow.swift; sourceTree = "<group>"; };
+		59D9F6BF2D15CC68001BA25C /* ClubViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
+		59D9F6C02D15CC68001BA25C /* ClubDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailView.swift; sourceTree = "<group>"; };
+		59D9F6C12D15CC68001BA25C /* ClubListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListView.swift; sourceTree = "<group>"; };
+		59D9F6C82D15CCAA001BA25C /* EventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		59D9F6CC2D15CCE8001BA25C /* ContactClubListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactClubListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		597AC67C2D1187DF00D1DB79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597AC6D02D11884100D1DB79 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				597AC6E62D11884100D1DB79 /* FirebaseVertexAI in Frameworks */,
+				597AC6D22D11884100D1DB79 /* FirebaseFunctions in Frameworks */,
+				597AC6DE2D11884100D1DB79 /* FirebasePerformance in Frameworks */,
+				597AC6E42D11884100D1DB79 /* FirebaseStorageCombine-Community in Frameworks */,
+				59B16AFE2D16AB0900E47F06 /* GoogleSignInSwift in Frameworks */,
+				597AC6E02D11884100D1DB79 /* FirebaseRemoteConfig in Frameworks */,
+				597AC6CA2D11884100D1DB79 /* FirebaseDatabase in Frameworks */,
+				597AC6CC2D11884100D1DB79 /* FirebaseDynamicLinks in Frameworks */,
+				597AC6BE2D11884100D1DB79 /* FirebaseAppCheck in Frameworks */,
+				597AC6C22D11884100D1DB79 /* FirebaseAuth in Frameworks */,
+				597AC6B82D11884100D1DB79 /* FirebaseAnalytics in Frameworks */,
+				597AC6CE2D11884100D1DB79 /* FirebaseFirestore in Frameworks */,
+				597AC6DC2D11884100D1DB79 /* FirebaseMessaging in Frameworks */,
+				597AC6D82D11884100D1DB79 /* FirebaseInstallations in Frameworks */,
+				597AC6D42D11884100D1DB79 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				59B16AFC2D16AB0900E47F06 /* GoogleSignIn in Frameworks */,
+				597AC6C02D11884100D1DB79 /* FirebaseAppDistribution-Beta in Frameworks */,
+				597AC6BC2D11884100D1DB79 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				597AC6D62D11884100D1DB79 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				597AC6C42D11884100D1DB79 /* FirebaseAuthCombine-Community in Frameworks */,
+				597AC6C82D11884100D1DB79 /* FirebaseCrashlytics in Frameworks */,
+				597AC6DA2D11884100D1DB79 /* FirebaseMLModelDownloader in Frameworks */,
+				597AC6E22D11884100D1DB79 /* FirebaseStorage in Frameworks */,
+				597AC6C62D11884100D1DB79 /* FirebaseCore in Frameworks */,
+				597AC6BA2D11884100D1DB79 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597AC6922D1187E000D1DB79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597AC69C2D1187E000D1DB79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		597AC6762D1187DF00D1DB79 = {
+			isa = PBXGroup;
+			children = (
+				597AC6812D1187DF00D1DB79 /* GoldWing Club */,
+				597AC6982D1187E000D1DB79 /* GoldWing ClubTests */,
+				597AC6A22D1187E000D1DB79 /* GoldWing ClubUITests */,
+				597AC6802D1187DF00D1DB79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		597AC6802D1187DF00D1DB79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				597AC67F2D1187DF00D1DB79 /* GoldWing Club.app */,
+				597AC6952D1187E000D1DB79 /* GoldWing ClubTests.xctest */,
+				597AC69F2D1187E000D1DB79 /* GoldWing ClubUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		597AC6812D1187DF00D1DB79 /* GoldWing Club */ = {
+			isa = PBXGroup;
+			children = (
+				59D9F6982D15CB6A001BA25C /* DataService */,
+				598EDD782D19E89600AACC48 /* Profile */,
+				598EDD912D21231F00AACC48 /* Katrapla */,
+				598EDD902D21231400AACC48 /* WingNews */,
+				598EDD732D19D00D00AACC48 /* News */,
+				59D9F6C72D15CC9E001BA25C /* Event */,
+				59D9F6992D15CBB1001BA25C /* Club */,
+				59D9F6972D15CACE001BA25C /* Contact */,
+				598EDD792D19EA2600AACC48 /* Images */,
+				597AC6B42D11880400D1DB79 /* GoogleService-Info.plist */,
+				597AC6B22D1187F200D1DB79 /* Info.plist */,
+				597AC6EB2D1189E800D1DB79 /* AppDelegate.swift */,
+				597AC6822D1187DF00D1DB79 /* GoldWing_ClubApp.swift */,
+				59B16AF42D16A84C00E47F06 /* GoldWing_ClubAppView.swift */,
+				597AC6ED2D118A0300D1DB79 /* MainView.swift */,
+				598EDD652D18061200AACC48 /* MainSecureView.swift */,
+				598EDDAF2D24437000AACC48 /* MoreView.swift */,
+				598EDD612D18052D00AACC48 /* AboutView.swift */,
+				598EDD5F2D18051900AACC48 /* HomeView.swift */,
+				597AC6842D1187DF00D1DB79 /* Persistence.swift */,
+				597AC6892D1187DF00D1DB79 /* ContentView.swift */,
+				597AC68B2D1187E000D1DB79 /* Assets.xcassets */,
+				597AC68D2D1187E000D1DB79 /* GoldWing_Club.entitlements */,
+				597AC6862D1187DF00D1DB79 /* GoldWing_Club.xcdatamodeld */,
+				597AC68E2D1187E000D1DB79 /* Preview Content */,
+			);
+			path = "GoldWing Club";
+			sourceTree = "<group>";
+		};
+		597AC68E2D1187E000D1DB79 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				597AC68F2D1187E000D1DB79 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		597AC6982D1187E000D1DB79 /* GoldWing ClubTests */ = {
+			isa = PBXGroup;
+			children = (
+				597AC6992D1187E000D1DB79 /* GoldWing_ClubTests.swift */,
+			);
+			path = "GoldWing ClubTests";
+			sourceTree = "<group>";
+		};
+		597AC6A22D1187E000D1DB79 /* GoldWing ClubUITests */ = {
+			isa = PBXGroup;
+			children = (
+				597AC6A32D1187E000D1DB79 /* GoldWing_ClubUITests.swift */,
+				597AC6A52D1187E000D1DB79 /* GoldWing_ClubUITestsLaunchTests.swift */,
+			);
+			path = "GoldWing ClubUITests";
+			sourceTree = "<group>";
+		};
+		598EDD732D19D00D00AACC48 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				598EDD632D18054400AACC48 /* InfosListView.swift */,
+				598EDD712D19892500AACC48 /* InfoRow.swift */,
+				598EDD7E2D1C1B1500AACC48 /* InfoEditRow.swift */,
+				598EDD6F2D19889B00AACC48 /* InfoDetailView.swift */,
+				598EDD762D19E69A00AACC48 /* InfoEditView.swift */,
+				598EDD742D19D2C200AACC48 /* InfoViewModel.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		598EDD782D19E89600AACC48 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				598EDD5D2D18050900AACC48 /* ProfileView.swift */,
+				59B16AF82D16A96600E47F06 /* AuthViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		598EDD792D19EA2600AACC48 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				598EDD7A2D19EA4B00AACC48 /* goldwing-club-france_app.png */,
+				59D9F69C2D15CBF9001BA25C /* Cartes */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		598EDD902D21231400AACC48 /* WingNews */ = {
+			isa = PBXGroup;
+			children = (
+				598EDDA12D218A0E00AACC48 /* WingNewListView.swift */,
+				598EDDA52D218A4900AACC48 /* WingNewRow.swift */,
+				598EDDA72D218A5500AACC48 /* WingNewEditRow.swift */,
+				598EDDA32D218A2F00AACC48 /* WingNewDetailView.swift */,
+				598EDDA92D218A6700AACC48 /* WingNewEditView.swift */,
+				598EDDAB2D218A8000AACC48 /* WingNewViewModel.swift */,
+			);
+			path = WingNews;
+			sourceTree = "<group>";
+		};
+		598EDD912D21231F00AACC48 /* Katrapla */ = {
+			isa = PBXGroup;
+			children = (
+				598EDD922D21235000AACC48 /* KatraplaListView.swift */,
+				598EDD9F2D21318700AACC48 /* KatraplaRow.swift */,
+				598EDD9B2D21316600AACC48 /* KatraplaEditRow.swift */,
+				598EDD9D2D21317200AACC48 /* KatraplaDetailView.swift */,
+				598EDD992D21311400AACC48 /* KatraplaEditView.swift */,
+				598EDD972D21293D00AACC48 /* KatraplaViewModel.swift */,
+			);
+			path = Katrapla;
+			sourceTree = "<group>";
+		};
+		59D9F6972D15CACE001BA25C /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				597AC6F92D11FE1200D1DB79 /* ContactListView.swift */,
+				597AC6F12D1193EB00D1DB79 /* ContactRow.swift */,
+				598EDDAD2D24356300AACC48 /* ContactEditRow.swift */,
+				597AC6F32D119F8E00D1DB79 /* ContactDetailView.swift */,
+				597AC6F52D11DC5D00D1DB79 /* ContactEditView.swift */,
+				59D9F6CC2D15CCE8001BA25C /* ContactClubListView.swift */,
+				59B16AEC2D15EFDD00E47F06 /* ContactAnnivListView.swift */,
+				597AC6E72D11897D00D1DB79 /* ContactViewModel.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		59D9F6982D15CB6A001BA25C /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				597AC6E92D11899700D1DB79 /* DataService.swift */,
+				598EDDB12D24553400AACC48 /* ImagePicker.swift */,
+				59D9F69A2D15CBC6001BA25C /* GifImage.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		59D9F6992D15CBB1001BA25C /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				59D9F6C12D15CC68001BA25C /* ClubListView.swift */,
+				59D9F6BE2D15CC68001BA25C /* ClubRow.swift */,
+				598EDD842D1FD11500AACC48 /* ClubEditRow.swift */,
+				59D9F6C02D15CC68001BA25C /* ClubDetailView.swift */,
+				59D9F6BD2D15CC68001BA25C /* ClubEditView.swift */,
+				59D9F6BF2D15CC68001BA25C /* ClubViewModel.swift */,
+			);
+			path = Club;
+			sourceTree = "<group>";
+		};
+		59D9F69C2D15CBF9001BA25C /* Cartes */ = {
+			isa = PBXGroup;
+			children = (
+				59D9F6A82D15CC12001BA25C /* Carte_club1.gif */,
+				59D9F6A12D15CC12001BA25C /* Carte_club2.gif */,
+				59D9F6A42D15CC12001BA25C /* Carte_club3.gif */,
+				59D9F6AB2D15CC12001BA25C /* Carte_club4.gif */,
+				59D9F6A52D15CC12001BA25C /* Carte_club5.gif */,
+				59D9F6A22D15CC12001BA25C /* Carte_club6.gif */,
+				59D9F6AA2D15CC12001BA25C /* Carte_club7.gif */,
+				59D9F6A02D15CC12001BA25C /* Carte_club8.gif */,
+				59D9F69F2D15CC12001BA25C /* Carte_club9.gif */,
+				59D9F69E2D15CC12001BA25C /* Carte_club10.gif */,
+				59D9F6AC2D15CC12001BA25C /* Carte_club11.gif */,
+				59D9F6A92D15CC12001BA25C /* Carte_club12.gif */,
+				59D9F6A32D15CC12001BA25C /* Carte_club13.gif */,
+				59D9F6A62D15CC12001BA25C /* Carte_club14.gif */,
+				59D9F69D2D15CC12001BA25C /* Carte_club15.gif */,
+				59D9F6A72D15CC12001BA25C /* Carte_fedefr.gif */,
+			);
+			path = Cartes;
+			sourceTree = "<group>";
+		};
+		59D9F6C72D15CC9E001BA25C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				59D9F6C82D15CCAA001BA25C /* EventListView.swift */,
+				59B16AF22D1618AE00E47F06 /* EventRow.swift */,
+				598EDD822D1EBF4B00AACC48 /* EventEditRow.swift */,
+				59B16AF02D16185800E47F06 /* EventDetailView.swift */,
+				598EDD7C2D1C00E300AACC48 /* EventEditView.swift */,
+				59B16AEE2D160C3D00E47F06 /* EventTypeListView.swift */,
+				59B16AEA2D15D73300E47F06 /* EventViewModel.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		597AC67E2D1187DF00D1DB79 /* GoldWing Club */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 597AC6A92D1187E000D1DB79 /* Build configuration list for PBXNativeTarget "GoldWing Club" */;
+			buildPhases = (
+				597AC67B2D1187DF00D1DB79 /* Sources */,
+				597AC67C2D1187DF00D1DB79 /* Frameworks */,
+				597AC67D2D1187DF00D1DB79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoldWing Club";
+			packageProductDependencies = (
+				597AC6B72D11884100D1DB79 /* FirebaseAnalytics */,
+				597AC6B92D11884100D1DB79 /* FirebaseAnalyticsOnDeviceConversion */,
+				597AC6BB2D11884100D1DB79 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				597AC6BD2D11884100D1DB79 /* FirebaseAppCheck */,
+				597AC6BF2D11884100D1DB79 /* FirebaseAppDistribution-Beta */,
+				597AC6C12D11884100D1DB79 /* FirebaseAuth */,
+				597AC6C32D11884100D1DB79 /* FirebaseAuthCombine-Community */,
+				597AC6C52D11884100D1DB79 /* FirebaseCore */,
+				597AC6C72D11884100D1DB79 /* FirebaseCrashlytics */,
+				597AC6C92D11884100D1DB79 /* FirebaseDatabase */,
+				597AC6CB2D11884100D1DB79 /* FirebaseDynamicLinks */,
+				597AC6CD2D11884100D1DB79 /* FirebaseFirestore */,
+				597AC6CF2D11884100D1DB79 /* FirebaseFirestoreCombine-Community */,
+				597AC6D12D11884100D1DB79 /* FirebaseFunctions */,
+				597AC6D32D11884100D1DB79 /* FirebaseFunctionsCombine-Community */,
+				597AC6D52D11884100D1DB79 /* FirebaseInAppMessaging-Beta */,
+				597AC6D72D11884100D1DB79 /* FirebaseInstallations */,
+				597AC6D92D11884100D1DB79 /* FirebaseMLModelDownloader */,
+				597AC6DB2D11884100D1DB79 /* FirebaseMessaging */,
+				597AC6DD2D11884100D1DB79 /* FirebasePerformance */,
+				597AC6DF2D11884100D1DB79 /* FirebaseRemoteConfig */,
+				597AC6E12D11884100D1DB79 /* FirebaseStorage */,
+				597AC6E32D11884100D1DB79 /* FirebaseStorageCombine-Community */,
+				597AC6E52D11884100D1DB79 /* FirebaseVertexAI */,
+				59B16AFB2D16AB0900E47F06 /* GoogleSignIn */,
+				59B16AFD2D16AB0900E47F06 /* GoogleSignInSwift */,
+			);
+			productName = "GoldWing Club";
+			productReference = 597AC67F2D1187DF00D1DB79 /* GoldWing Club.app */;
+			productType = "com.apple.product-type.application";
+		};
+		597AC6942D1187E000D1DB79 /* GoldWing ClubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 597AC6AC2D1187E000D1DB79 /* Build configuration list for PBXNativeTarget "GoldWing ClubTests" */;
+			buildPhases = (
+				597AC6912D1187E000D1DB79 /* Sources */,
+				597AC6922D1187E000D1DB79 /* Frameworks */,
+				597AC6932D1187E000D1DB79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				597AC6972D1187E000D1DB79 /* PBXTargetDependency */,
+			);
+			name = "GoldWing ClubTests";
+			productName = "GoldWing ClubTests";
+			productReference = 597AC6952D1187E000D1DB79 /* GoldWing ClubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		597AC69E2D1187E000D1DB79 /* GoldWing ClubUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 597AC6AF2D1187E000D1DB79 /* Build configuration list for PBXNativeTarget "GoldWing ClubUITests" */;
+			buildPhases = (
+				597AC69B2D1187E000D1DB79 /* Sources */,
+				597AC69C2D1187E000D1DB79 /* Frameworks */,
+				597AC69D2D1187E000D1DB79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				597AC6A12D1187E000D1DB79 /* PBXTargetDependency */,
+			);
+			name = "GoldWing ClubUITests";
+			productName = "GoldWing ClubUITests";
+			productReference = 597AC69F2D1187E000D1DB79 /* GoldWing ClubUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		597AC6772D1187DF00D1DB79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					597AC67E2D1187DF00D1DB79 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					597AC6942D1187E000D1DB79 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 597AC67E2D1187DF00D1DB79;
+					};
+					597AC69E2D1187E000D1DB79 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 597AC67E2D1187DF00D1DB79;
+					};
+				};
+			};
+			buildConfigurationList = 597AC67A2D1187DF00D1DB79 /* Build configuration list for PBXProject "GoldWing Club" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 597AC6762D1187DF00D1DB79;
+			packageReferences = (
+				597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				59B16AFA2D16AB0900E47F06 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 597AC6802D1187DF00D1DB79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				597AC67E2D1187DF00D1DB79 /* GoldWing Club */,
+				597AC6942D1187E000D1DB79 /* GoldWing ClubTests */,
+				597AC69E2D1187E000D1DB79 /* GoldWing ClubUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		597AC67D2D1187DF00D1DB79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597AC6902D1187E000D1DB79 /* Preview Assets.xcassets in Resources */,
+				59D9F6BA2D15CC12001BA25C /* Carte_club7.gif in Resources */,
+				59D9F6BC2D15CC12001BA25C /* Carte_club11.gif in Resources */,
+				59D9F6B12D15CC12001BA25C /* Carte_club2.gif in Resources */,
+				59D9F6B82D15CC12001BA25C /* Carte_club1.gif in Resources */,
+				59D9F6B32D15CC12001BA25C /* Carte_club13.gif in Resources */,
+				59D9F6BB2D15CC12001BA25C /* Carte_club4.gif in Resources */,
+				597AC6B52D11880400D1DB79 /* GoogleService-Info.plist in Resources */,
+				59D9F6B72D15CC12001BA25C /* Carte_fedefr.gif in Resources */,
+				59D9F6B42D15CC12001BA25C /* Carte_club3.gif in Resources */,
+				59D9F6AF2D15CC12001BA25C /* Carte_club9.gif in Resources */,
+				59D9F6AE2D15CC12001BA25C /* Carte_club10.gif in Resources */,
+				59D9F6B22D15CC12001BA25C /* Carte_club6.gif in Resources */,
+				598EDD7B2D19EA4B00AACC48 /* goldwing-club-france_app.png in Resources */,
+				59D9F6B52D15CC12001BA25C /* Carte_club5.gif in Resources */,
+				59D9F6B92D15CC12001BA25C /* Carte_club12.gif in Resources */,
+				59D9F6AD2D15CC12001BA25C /* Carte_club15.gif in Resources */,
+				59D9F6B02D15CC12001BA25C /* Carte_club8.gif in Resources */,
+				597AC68C2D1187E000D1DB79 /* Assets.xcassets in Resources */,
+				59D9F6B62D15CC12001BA25C /* Carte_club14.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597AC6932D1187E000D1DB79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597AC69D2D1187E000D1DB79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		597AC67B2D1187DF00D1DB79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				598EDD702D19889B00AACC48 /* InfoDetailView.swift in Sources */,
+				598EDD662D18061200AACC48 /* MainSecureView.swift in Sources */,
+				598EDD772D19E69A00AACC48 /* InfoEditView.swift in Sources */,
+				598EDD5E2D18050900AACC48 /* ProfileView.swift in Sources */,
+				598EDD7F2D1C1B1500AACC48 /* InfoEditRow.swift in Sources */,
+				598EDD982D21293D00AACC48 /* KatraplaViewModel.swift in Sources */,
+				598EDD722D19892500AACC48 /* InfoRow.swift in Sources */,
+				598EDDB22D24553400AACC48 /* ImagePicker.swift in Sources */,
+				59D9F6C62D15CC68001BA25C /* ClubListView.swift in Sources */,
+				598EDD602D18051900AACC48 /* HomeView.swift in Sources */,
+				598EDD642D18054400AACC48 /* InfosListView.swift in Sources */,
+				59B16AEF2D160C3D00E47F06 /* EventTypeListView.swift in Sources */,
+				597AC6F22D1193EB00D1DB79 /* ContactRow.swift in Sources */,
+				597AC6882D1187DF00D1DB79 /* GoldWing_Club.xcdatamodeld in Sources */,
+				597AC6EE2D118A0300D1DB79 /* MainView.swift in Sources */,
+				59B16AF12D16185800E47F06 /* EventDetailView.swift in Sources */,
+				59D9F6C42D15CC68001BA25C /* ClubViewModel.swift in Sources */,
+				598EDD752D19D2C200AACC48 /* InfoViewModel.swift in Sources */,
+				597AC6832D1187DF00D1DB79 /* GoldWing_ClubApp.swift in Sources */,
+				59D9F6C22D15CC68001BA25C /* ClubEditView.swift in Sources */,
+				598EDDB02D24437000AACC48 /* MoreView.swift in Sources */,
+				598EDD932D21235000AACC48 /* KatraplaListView.swift in Sources */,
+				59D9F6CD2D15CCE8001BA25C /* ContactClubListView.swift in Sources */,
+				59D9F6C52D15CC68001BA25C /* ClubDetailView.swift in Sources */,
+				59B16AEB2D15D73300E47F06 /* EventViewModel.swift in Sources */,
+				59B16AED2D15EFDD00E47F06 /* ContactAnnivListView.swift in Sources */,
+				59D9F6C32D15CC68001BA25C /* ClubRow.swift in Sources */,
+				59B16AF32D1618AE00E47F06 /* EventRow.swift in Sources */,
+				598EDD852D1FD11500AACC48 /* ClubEditRow.swift in Sources */,
+				597AC6E82D11897D00D1DB79 /* ContactViewModel.swift in Sources */,
+				597AC6EA2D11899700D1DB79 /* DataService.swift in Sources */,
+				598EDDA22D218A0E00AACC48 /* WingNewListView.swift in Sources */,
+				597AC6EC2D1189E800D1DB79 /* AppDelegate.swift in Sources */,
+				598EDDA42D218A2F00AACC48 /* WingNewDetailView.swift in Sources */,
+				598EDDAE2D24356300AACC48 /* ContactEditRow.swift in Sources */,
+				598EDD9C2D21316600AACC48 /* KatraplaEditRow.swift in Sources */,
+				598EDD9A2D21311400AACC48 /* KatraplaEditView.swift in Sources */,
+				597AC68A2D1187DF00D1DB79 /* ContentView.swift in Sources */,
+				598EDD832D1EBF4B00AACC48 /* EventEditRow.swift in Sources */,
+				597AC6FA2D11FE1200D1DB79 /* ContactListView.swift in Sources */,
+				598EDDA62D218A4900AACC48 /* WingNewRow.swift in Sources */,
+				59B16AF52D16A84C00E47F06 /* GoldWing_ClubAppView.swift in Sources */,
+				598EDD622D18052D00AACC48 /* AboutView.swift in Sources */,
+				598EDDAC2D218A8000AACC48 /* WingNewViewModel.swift in Sources */,
+				59D9F6CA2D15CCAA001BA25C /* EventListView.swift in Sources */,
+				59D9F69B2D15CBC6001BA25C /* GifImage.swift in Sources */,
+				598EDDAA2D218A6700AACC48 /* WingNewEditView.swift in Sources */,
+				59B16AF92D16A96600E47F06 /* AuthViewModel.swift in Sources */,
+				598EDD9E2D21317200AACC48 /* KatraplaDetailView.swift in Sources */,
+				597AC6F62D11DC5D00D1DB79 /* ContactEditView.swift in Sources */,
+				597AC6F42D119F8E00D1DB79 /* ContactDetailView.swift in Sources */,
+				597AC6852D1187DF00D1DB79 /* Persistence.swift in Sources */,
+				598EDDA02D21318700AACC48 /* KatraplaRow.swift in Sources */,
+				598EDDA82D218A5500AACC48 /* WingNewEditRow.swift in Sources */,
+				598EDD7D2D1C00E300AACC48 /* EventEditView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597AC6912D1187E000D1DB79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597AC69A2D1187E000D1DB79 /* GoldWing_ClubTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597AC69B2D1187E000D1DB79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597AC6A42D1187E000D1DB79 /* GoldWing_ClubUITests.swift in Sources */,
+				597AC6A62D1187E000D1DB79 /* GoldWing_ClubUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		597AC6972D1187E000D1DB79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 597AC67E2D1187DF00D1DB79 /* GoldWing Club */;
+			targetProxy = 597AC6962D1187E000D1DB79 /* PBXContainerItemProxy */;
+		};
+		597AC6A12D1187E000D1DB79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 597AC67E2D1187DF00D1DB79 /* GoldWing Club */;
+			targetProxy = 597AC6A02D1187E000D1DB79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		597AC6A72D1187E000D1DB79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		597AC6A82D1187E000D1DB79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		597AC6AA2D1187E000D1DB79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GoldWing Club/GoldWing_Club.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoldWing Club/Preview Content\"";
+				DEVELOPMENT_TEAM = 4SU4GZ46X3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoldWing Club/Info.plist";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-Club";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		597AC6AB2D1187E000D1DB79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GoldWing Club/GoldWing_Club.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoldWing Club/Preview Content\"";
+				DEVELOPMENT_TEAM = 4SU4GZ46X3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoldWing Club/Info.plist";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-Club";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		597AC6AD2D1187E000D1DB79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SU4GZ46X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-ClubTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldWing Club.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoldWing Club";
+			};
+			name = Debug;
+		};
+		597AC6AE2D1187E000D1DB79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SU4GZ46X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-ClubTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldWing Club.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoldWing Club";
+			};
+			name = Release;
+		};
+		597AC6B02D1187E000D1DB79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SU4GZ46X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-ClubUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GoldWing Club";
+			};
+			name = Debug;
+		};
+		597AC6B12D1187E000D1DB79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SU4GZ46X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-ClubUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GoldWing Club";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		597AC67A2D1187DF00D1DB79 /* Build configuration list for PBXProject "GoldWing Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				597AC6A72D1187E000D1DB79 /* Debug */,
+				597AC6A82D1187E000D1DB79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		597AC6A92D1187E000D1DB79 /* Build configuration list for PBXNativeTarget "GoldWing Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				597AC6AA2D1187E000D1DB79 /* Debug */,
+				597AC6AB2D1187E000D1DB79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		597AC6AC2D1187E000D1DB79 /* Build configuration list for PBXNativeTarget "GoldWing ClubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				597AC6AD2D1187E000D1DB79 /* Debug */,
+				597AC6AE2D1187E000D1DB79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		597AC6AF2D1187E000D1DB79 /* Build configuration list for PBXNativeTarget "GoldWing ClubUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				597AC6B02D1187E000D1DB79 /* Debug */,
+				597AC6B12D1187E000D1DB79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+		59B16AFA2D16AB0900E47F06 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		597AC6B72D11884100D1DB79 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		597AC6B92D11884100D1DB79 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		597AC6BB2D11884100D1DB79 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		597AC6BD2D11884100D1DB79 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		597AC6BF2D11884100D1DB79 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		597AC6C12D11884100D1DB79 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		597AC6C32D11884100D1DB79 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		597AC6C52D11884100D1DB79 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		597AC6C72D11884100D1DB79 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		597AC6C92D11884100D1DB79 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		597AC6CB2D11884100D1DB79 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		597AC6CD2D11884100D1DB79 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		597AC6CF2D11884100D1DB79 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		597AC6D12D11884100D1DB79 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		597AC6D32D11884100D1DB79 /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		597AC6D52D11884100D1DB79 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		597AC6D72D11884100D1DB79 /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		597AC6D92D11884100D1DB79 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		597AC6DB2D11884100D1DB79 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		597AC6DD2D11884100D1DB79 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		597AC6DF2D11884100D1DB79 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		597AC6E12D11884100D1DB79 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		597AC6E32D11884100D1DB79 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		597AC6E52D11884100D1DB79 /* FirebaseVertexAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597AC6B62D11884100D1DB79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseVertexAI;
+		};
+		59B16AFB2D16AB0900E47F06 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59B16AFA2D16AB0900E47F06 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		59B16AFD2D16AB0900E47F06 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59B16AFA2D16AB0900E47F06 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		597AC6862D1187DF00D1DB79 /* GoldWing_Club.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				597AC6872D1187DF00D1DB79 /* GoldWing_Club.xcdatamodel */,
+			);
+			currentVersion = 597AC6872D1187DF00D1DB79 /* GoldWing_Club.xcdatamodel */;
+			path = GoldWing_Club.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 597AC6772D1187DF00D1DB79 /* Project object */;
+}

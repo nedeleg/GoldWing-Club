@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EEF77329-6CAD-4A24-A324-C26CF671EE44"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3C653EE-2F95-4510-A7CB-78F8EE65862C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoldWing Club/ContactViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ContactViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F3C653EE-2F95-4510-A7CB-78F8EE65862C - 2fa5dcb838b9248"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoldWing_Club.ContactViewModel.deinit"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/ContactViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "F3C653EE-2F95-4510-A7CB-78F8EE65862C - 2958a2e73cd4c37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoldWing_Club.ContactViewModel.__deallocating_deinit"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/ContactViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "F3C653EE-2F95-4510-A7CB-78F8EE65862C - 24aaa53d0858eb27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoldWing_Club.ContactViewModel.__allocating_init() -&gt; GoldWing_Club.ContactViewModel"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/ContactViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "F3C653EE-2F95-4510-A7CB-78F8EE65862C - 4e7bc9fb4cd4a76c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoldWing_Club.ContactViewModel.init() -&gt; GoldWing_Club.ContactViewModel"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/ContactViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "F3C653EE-2F95-4510-A7CB-78F8EE65862C - 4e7bc9fb4cd4a72a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoldWing_Club.ContactViewModel.init() -&gt; GoldWing_Club.ContactViewModel"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/ContactViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "612">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A560D47-088F-42D6-980E-923D51C574CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoldWing Club/News/InfosListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5A560D47-088F-42D6-980E-923D51C574CF - 5e93a220cc6f283d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (GoldWing_Club.Info) -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;GoldWing_Club.InfoRow, GoldWing_Club.InfoEditView&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;)&gt;&gt;, SwiftUI.NavigationLink&lt;GoldWing_Club.InfoRow, GoldWing_Club.InfoDetailView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.NavigationLink&lt;SwiftUI.Text, GoldWing_Club.InfoEditView&gt;)&gt;&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.DynamicViewContent.onDelete(perform: Swift.Optional&lt;(Foundation.IndexSet) -&gt; ()&gt;) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in GoldWing_Club.InfosListView.body.getter : some"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/News/InfosListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "676">
+               </Location>
+               <Location
+                  uuid = "5A560D47-088F-42D6-980E-923D51C574CF - 5e93a220cc6f283d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (GoldWing_Club.Info) -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;SwiftUI.TupleView&lt;(GoldWing_Club.InfoRow, SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;)&gt;, GoldWing_Club.InfoEditView&gt;&gt;, SwiftUI.NavigationLink&lt;GoldWing_Club.InfoRow, GoldWing_Club.InfoDetailView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.NavigationLink&lt;SwiftUI.Text, GoldWing_Club.InfoEditView&gt;)&gt;&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.DynamicViewContent.onDelete(perform: Swift.Optional&lt;(Foundation.IndexSet) -&gt; ()&gt;) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in GoldWing_Club.InfosListView.body.getter : some"
+                  moduleName = "GoldWing Club"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DataNoel/Xcode/GoldWing%20Club/GoldWing%20Club/News/InfosListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B906AAA4-897C-4C34-A481-A356B94E42E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoldWing Club/WingNews/WingNewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "WingNewViewModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
