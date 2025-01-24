@@ -22,6 +22,8 @@ struct EventEditView: View {
             Form {
                 Section(header: Text("Informations principales")) {
                     TextField("Nom de l'événement", text: $event.name)
+
+                    TextField("Lieu de l'événement", text: $event.lieu)
                     
                     Picker("Type d'événement", selection: $event.eventType) {
                         ForEach(eventViewModel.eventTypes, id: \.self) { eventType in
@@ -138,6 +140,7 @@ struct EventEditView: View {
         clubId: "Club10",
         eventType : "Sortie",
         name: "Carabalade 2024",
+        lieu: "Paris",
         startDate: Date(),
         endDate: Date().addingTimeInterval (TimeInterval( 60 ) ),
         createdBy: "Auteur",
