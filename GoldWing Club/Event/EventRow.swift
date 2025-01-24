@@ -43,6 +43,7 @@ struct EventRow: View {
          clubId: "String",
          eventType : "String",
          name: "String",
+         lieu: "Paris",
          startDate: Date(),
          endDate: Date().addingTimeInterval (TimeInterval( 60 )),
          createdBy: "Auteur",
