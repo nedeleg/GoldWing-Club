@@ -97,6 +97,7 @@ class EventViewModel: ObservableObject {
             clubId: clubId,
             eventType: eventType,
             name: "",
+            lieu: "",
             startDate: Date(),
             endDate: Date().addingTimeInterval (TimeInterval( 60*60 )), // Add an hour by default
             createdBy: contactId,
