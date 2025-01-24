@@ -46,7 +46,7 @@ struct AboutView: View {
                         .foregroundColor(.gray)
                         .padding(.trailing,10)
                 }.padding(.top,20)
-
+                
                 
                 Spacer()
             }

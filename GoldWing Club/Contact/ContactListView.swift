@@ -11,7 +11,6 @@ struct ContactListView: View {
     @StateObject private var contactViewModel = ContactViewModel()
     @EnvironmentObject var authViewModel: AuthViewModel
 
-    
     @State private var selectedContact: Contact? = nil
     @State var mode: EditMode = .inactive //< -- Here
     @State var isPresented: Bool = false //< -- Here
@@ -48,7 +47,9 @@ struct ContactListView: View {
                             // Convertir l'index en identifiant
                             if let index = indexSet.first {
                                 let contactToDelete = contactViewModel.filteredContacts[index]
-                                contactViewModel.deleteContact(by: contactToDelete.id)
+                                contactViewModel.deleteContact(by: contactToDelete.id) { success in
+                                }
+
                             }
                         }
                     }
@@ -59,9 +60,9 @@ struct ContactListView: View {
                     //    ContactEditView (contact: contact)
                     //}
                     .toolbar {
-                        if authViewModel.isUserAdmin {
+                        if authViewModel.isSystemAdmin {
                             ToolbarItem(placement: .navigationBarTrailing) {
-                                    NavigationLink(destination: ContactEditView (contact: contactViewModel.createNewContact(UUID().uuidString) ) ) {
+                                    NavigationLink(destination: ContactEditView (contact: contactViewModel.createNewContact(UUID().uuidString, "FedeFR") ) ) {
                                         Image(systemName: "plus")
                                 }
                             }

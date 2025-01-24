@@ -36,10 +36,33 @@ struct GoldWing_ClubApp: App {
     }
 }
 
-let dateFormatter: DateFormatter = {
+var dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd" // Match your date format
+    dateFormatter.timeZone = TimeZone(abbreviation: "CET") // Adjust to your timezone if needed
+    return dateFormatter
+}()
+
+var dateHourFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" // Match your date format
+    dateFormatter.timeZone = TimeZone(abbreviation: "CET") // Adjust to your timezone if needed
+    return dateFormatter
+}()
+
+
+let frenchDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale    = Locale(identifier: "fr")
+        return dateFormatter
+    }()
+
+let frenchDateHourFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
+        dateFormatter.timeStyle = .short
         dateFormatter.locale    = Locale(identifier: "fr")
         return dateFormatter
     }()
@@ -63,12 +86,17 @@ struct Contact: Identifiable, Codable {
     var uid: String
     var firstName: String
     var lastName: String
+    var nickName: String
     var clubId : String
     var role: String
+    var userStatus: String
+    var userProfile: String
     var title: String
     var gender: String
     var birthday: Date
-    var phone: String
+    var cellPhone: String
+    var homePhone: String
+    var workPhone: String
     var email: String
     var address: String
     var city: String
@@ -89,7 +117,9 @@ struct Event: Identifiable {
     var clubId : String
     var eventType : String
     var name: String
-    var date: Date
+    var startDate: Date
+    var endDate: Date
+    var createdBy: String
     var description : String
     var photo: String
     var fichierInscription: String
@@ -114,6 +144,7 @@ struct EventType: Identifiable {
 
 struct Katrapla: Identifiable {
     var id: String
+    var numero: String
     var title : String
     var url_source : String
     var photo : String
@@ -122,6 +153,7 @@ struct Katrapla: Identifiable {
 
 struct WingNew: Identifiable {
     var id: String
+    var numero: String
     var title : String
     var url_source : String
     var photo : String

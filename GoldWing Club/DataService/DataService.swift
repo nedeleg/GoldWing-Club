@@ -9,19 +9,17 @@ import Foundation
 
 import FirebaseDatabase
 import FirebaseStorage
-import UIKit
+import FirebaseAuth
+
+#if os(macOS)
+    import Cocoa
+#elseif os(iOS)
+    import UIKit
+#endif
 
 class DataService {
     static let shared = DataService()
     private let database = Database.database().reference()
-    
-    
-    var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd" // Match your date format
-        dateFormatter.timeZone = TimeZone(abbreviation: "CET") // Adjust to your timezone if needed
-        return dateFormatter
-    }()
     
     
     // MARK: - CRUD Operations for Contacts
@@ -47,7 +45,7 @@ class DataService {
             .queryEqual(toValue: uid)
             .observeSingleEvent(of: .value) { snapshot in
                 if let firstChild = snapshot.children.allObjects.first as? DataSnapshot,
-                   let contactDict = firstChild.value as? [String: Any],
+                    let contactDict = firstChild.value as? [String: Any],
                    let contact = self.contactFromSnapshot(contactDict, id: firstChild.key) {
                     completion(contact, nil)
                 } else {
@@ -149,7 +147,7 @@ class DataService {
                        let contactClubID = contactDict["clubId"] as? String,
                        let contactBirthday = contactDict["birthday"] as? String,
                        contactClubID == clubId, // Filter by clubID,
-                       let birthdayDate = self.dateFormatter.date(from: contactBirthday),
+                       let birthdayDate = dateFormatter.date(from: contactBirthday),
                        checkAnniversary (currentDate: Date.now, birthday: birthdayDate)
                     {   // Filter by birthdayDate
                         if let contact = self.contactFromSnapshot(contactDict, id: childSnapshot.key) {
@@ -167,23 +165,28 @@ class DataService {
     func saveContact(_ contact: Contact, completion: @escaping (Bool) -> Void) {
         
         let contactData = [
-            "id" : contact.id as String,
-            "uid" : contact.uid as String,
-            "firstName" : contact.firstName as String,
-            "lastName" : contact.lastName as String,
-            "clubId" : contact.clubId as String,
-            "role" : contact.role as String,
-            "title" : contact.title as String,
-            "gender" : contact.gender as String,
-            "birthday" : dateFormatter.string(from: contact.birthday) as String,
-            "phone" : contact.phone as String,
-            "email" : contact.email as String,
-            "address" : contact.address as String,
-            "city" : contact.city as String,
-            "postalCode" : contact.postalCode as String,
-            "country" : contact.country as String,
-            "notes" : contact.notes as String,
-            "photo" : contact.photo as String
+            "id" :          contact.id as String,
+            "uid" :         contact.uid as String,
+            "firstName" :   contact.firstName as String,
+            "lastName" :    contact.lastName as String,
+            "nickName" :    contact.nickName as String,
+            "clubId" :      contact.clubId as String,
+            "role" :        contact.role as String,
+            "userStatus" :  contact.userStatus as String,
+            "userProfile" : contact.userProfile as String,
+            "title" :       contact.title as String,
+            "gender" :      contact.gender as String,
+            "birthday" :    dateFormatter.string(from: contact.birthday) as String,
+            "cellPhone" :   contact.cellPhone as String,
+            "homePhone" :   contact.homePhone as String,
+            "workPhone" :   contact.workPhone as String,
+            "email" :       contact.email as String,
+            "address" :     contact.address as String,
+            "city" :        contact.city as String,
+            "postalCode" :  contact.postalCode as String,
+            "country" :     contact.country as String,
+            "notes" :       contact.notes as String,
+            "photo" :       contact.photo as String
         ] as [String: Any]
         
         database.child("contacts").child(contact.id).setValue(contactData) { error, _ in
@@ -218,23 +221,28 @@ class DataService {
         let birthday = dateFormatter.date(from: birthdayString) ?? Date(timeIntervalSince1970: 0) // Default to 1970 if parsing fails
         
         return Contact(
-            id:         id,
-            uid:        uid,
-            firstName:  firstName,
-            lastName:   lastName,
-            clubId:     clubId,
-            role:       snapshot["role"] as? String ?? "",
-            title:      snapshot["title"] as? String ?? "",
-            gender:     snapshot["gender"] as? String ?? "",
-            birthday:   birthday,
-            phone:      snapshot["phone"] as? String ?? "",
-            email:      snapshot["email"] as? String ?? "",
-            address:    snapshot["address"] as? String ?? "",
-            city:       snapshot["city"] as? String ?? "",
-            postalCode: snapshot["postalCode"] as? String ?? "",
-            country:    snapshot["country"] as? String ?? "",
-            notes:      snapshot["notes"] as? String ?? "",
-            photo:      snapshot["photo"] as? String ?? ""
+            id:             id,
+            uid:            uid,
+            firstName:      firstName,
+            lastName:       lastName,
+            nickName:       snapshot["nickName"] as? String ?? "",
+            clubId:         clubId,
+            role:           snapshot["role"] as? String ?? "",
+            userStatus:     snapshot["userStatus"] as? String ?? "",
+            userProfile:    snapshot["userProfile"] as? String ?? "",
+            title:          snapshot["title"] as? String ?? "",
+            gender:         snapshot["gender"] as? String ?? "",
+            birthday:       birthday,
+            cellPhone:      snapshot["cellPhone"] as? String ?? "",
+            homePhone:      snapshot["homePhone"] as? String ?? "",
+            workPhone:      snapshot["workPhone"] as? String ?? "",
+            email:          snapshot["email"] as? String ?? "",
+            address:        snapshot["address"] as? String ?? "",
+            city:           snapshot["city"] as? String ?? "",
+            postalCode:     snapshot["postalCode"] as? String ?? "",
+            country:        snapshot["country"] as? String ?? "",
+            notes:          snapshot["notes"] as? String ?? "",
+            photo:          snapshot["photo"] as? String ?? ""
         )
     }
     
@@ -441,37 +449,42 @@ class DataService {
             let name = snapshot["name"] as? String,
             let clubId = snapshot["clubId"] as? String,
             let eventType = snapshot["eventType"] as? String,
-            let dateString = snapshot["date"] as? String
-        else { return nil }
+            let startDateString = snapshot["startDate"] as? String,
+            let endDateString = snapshot["endDate"] as? String
+            else { return nil }
         
-        // Parse the birthday date string en ensure it well formatted
-        
-        let date = dateFormatter.date(from: dateString) ??  Date(timeIntervalSince1970: 0)
-        
+        // Parse the  date string en ensure it well formatted        
+        let startDate = dateHourFormatter.date(from: startDateString) ??  Date(timeIntervalSince1970: 0)
+        let endDate = dateHourFormatter.date(from: endDateString) ??  Date(timeIntervalSince1970: 0)
+
         return Event(
-            id: id,
-            clubId: clubId,
-            eventType: eventType,
-            name: name,
-            date: date,
-            description: snapshot["description"] as? String ?? "",
-            photo: snapshot["photo"] as? String ?? "",
+            id:                 id,
+            clubId:             clubId,
+            eventType:          eventType,
+            name:               name,
+            startDate:          startDate,
+            endDate:            endDate,
+            createdBy:          snapshot["createdBy"] as? String ?? "",
+            description:        snapshot["description"] as? String ?? "",
+            photo:              snapshot["photo"] as? String ?? "",
             fichierInscription: snapshot["fichierInscription"] as? String ?? "",
-            inscriptionForm: snapshot["inscriptionForm"] as? String ?? ""
+            inscriptionForm:    snapshot["inscriptionForm"] as? String ?? ""
         )
     }
     
     func saveEvent (_ event: Event, completion: @escaping (Bool) -> Void) {
         let eventData = [
-            "id" : event.id as String,
-            "clubId" : event.clubId as String,
-            "eventType" : event.eventType as String,
-            "name" : event.name as String,
-            "date" : dateFormatter.string(from: event.date) as String,
-            "description" : event.description as String,
-            "photo" : event.photo as String,
-            "fichierInscription" : event.fichierInscription as String,
-            "inscriptionForm" : event.inscriptionForm as String
+            "id" :                  event.id as String,
+            "clubId" :              event.clubId as String,
+            "eventType" :           event.eventType as String,
+            "name" :                event.name as String,
+            "startDate" :           dateHourFormatter.string(from: event.startDate) as String,
+            "endDate" :             dateHourFormatter.string(from: event.endDate) as String,
+            "createdBy" :           event.createdBy as String,
+            "description" :         event.description as String,
+            "photo" :               event.photo as String,
+            "fichierInscription" :  event.fichierInscription as String,
+            "inscriptionForm" :     event.inscriptionForm as String
         ] as [String: Any]
         
         database.child("events").child(event.id).setValue(eventData) { error, _ in
@@ -521,7 +534,7 @@ class DataService {
             let dateString = snapshot["date"] as? String
         else { return nil }
         
-        let date = dateFormatter.date(from: dateString) ?? Date(timeIntervalSince1970: 0)
+        let date = dateHourFormatter.date(from: dateString) ?? Date(timeIntervalSince1970: 0)
         
         return Info(
             id: id,
@@ -540,7 +553,7 @@ class DataService {
             "id" : info.id as String,
             "title" : info.title as String,
             "auteur" : info.auteur as String,
-            "date" : dateFormatter.string(from: info.date) as String,
+            "date" : dateHourFormatter.string(from: info.date) as String,
             "description" : info.description as String,
             "photo" : info.photo as String,
             "texte" : info.texte as String,
@@ -618,11 +631,12 @@ class DataService {
 
     func saveKatrapla (_ katrapla: Katrapla, completion: @escaping (Bool) -> Void) {
         let katraplaData = [
-            "id" : katrapla.id as String,
-            "title" : katrapla.title as String,
-            "url_source" : katrapla.url_source as String,
-            "photo" : katrapla.photo as String,
-            "date" : dateFormatter.string(from: katrapla.date) as String
+            "id":       katrapla.id as String,
+            "numero":   katrapla.numero as String,
+            "title":    katrapla.title as String,
+            "url_source": katrapla.url_source as String,
+            "photo" :   katrapla.photo as String,
+            "date" :    dateFormatter.string(from: katrapla.date) as String
         ] as [String: Any]
         
         database.child("katraplas").child(katrapla.id).setValue(katraplaData) { error, _ in
@@ -651,11 +665,12 @@ class DataService {
         let date = dateFormatter.date(from: dateString) ?? Date(timeIntervalSince1970: 0)
         
         return Katrapla (
-            id: id,
-            title: snapshot["title"] as? String ?? "",
+            id:         id,
+            numero:     snapshot["numero"] as? String ?? "",
+            title:      snapshot["title"] as? String ?? "",
             url_source: snapshot["url_source"] as? String ?? "",
-            photo: snapshot["photo"] as? String ?? "",
-            date: date
+            photo:      snapshot["photo"] as? String ?? "",
+            date:       date
         )
     }
     
@@ -684,11 +699,12 @@ class DataService {
 
     func saveWingNew (_ wingNew: WingNew, completion: @escaping (Bool) -> Void) {
         let wingNewData = [
-            "id" : wingNew.id as String,
-            "title" : wingNew.title as String,
-            "url_source" : wingNew.url_source as String,
-            "photo" : wingNew.photo as String,
-            "date" : dateFormatter.string(from: wingNew.date) as String
+            "id":       wingNew.id as String,
+            "numero":   wingNew.numero as String,
+            "title":    wingNew.title as String,
+            "url_source": wingNew.url_source as String,
+            "photo":    wingNew.photo as String,
+            "date":     dateFormatter.string(from: wingNew.date) as String
         ] as [String: Any]
         
         database.child("wingNews").child(wingNew.id).setValue(wingNewData) { error, _ in
@@ -718,11 +734,12 @@ class DataService {
         let date = dateFormatter.date(from: dateString) ?? Date(timeIntervalSince1970: 0)
         
         return WingNew (
-            id: id,
-            title: snapshot["title"] as? String ?? "",
+            id:         id,
+            numero:     snapshot["numero"] as? String ?? "",
+            title:      snapshot["title"] as? String ?? "",
             url_source: snapshot["url_source"] as? String ?? "",
-            photo: snapshot["photo"] as? String ?? "",
-            date: date
+            photo:      snapshot["photo"] as? String ?? "",
+            date:       date
         )
     }
     
@@ -774,18 +791,32 @@ class DataService {
     
     func deleteProfileImage (withId photoId: String, completion: @escaping (Bool) -> Void) {
         // Get a reference to the file
-        let storageRef = Storage.storage().reference().child("profileImages/\(photoId)-profile.jpg")
+                
+        // Generate a unique filename
+        let filename = "\(photoId)-profile.jpg"
+        
+        // Reference to Firebase Storage
+        let storageRef = Storage.storage().reference().child("profileImages/\(filename)")
         
         // Delete the file
         storageRef.delete { error in
-            if let error = error {
-                // Handle any errors
-                print("Error deleting file: \(error.localizedDescription)")
+            if let error = error as NSError? {
+                if error.domain == StorageErrorDomain, let errorCode = StorageErrorCode(rawValue: error.code) {
+                    switch errorCode {
+                    case .unauthorized:
+                        print("User does not have permission to perform this action on file. \(error.localizedDescription)")
+                    case .objectNotFound:
+                        print("File not found.")
+                    default:
+                        print("Error deleting file: \(error.localizedDescription)")
+                    }
+                    
+                }
                 completion(false)
             } else {
-                // File deleted successfully
                 print("File successfully deleted.")
                 completion(true)
+
             }
         }
     }

@@ -87,6 +87,8 @@
 		59B16AF92D16A96600E47F06 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B16AF82D16A96600E47F06 /* AuthViewModel.swift */; };
 		59B16AFC2D16AB0900E47F06 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 59B16AFB2D16AB0900E47F06 /* GoogleSignIn */; };
 		59B16AFE2D16AB0900E47F06 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59B16AFD2D16AB0900E47F06 /* GoogleSignInSwift */; };
+		59BFFDF92D38F7FB00FA8EA7 /* MainStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFFDF82D38F7FB00FA8EA7 /* MainStartView.swift */; };
+		59BFFDFC2D38FB2E00FA8EA7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BFFDFB2D38FB2E00FA8EA7 /* Launch Screen.storyboard */; };
 		59D9F69B2D15CBC6001BA25C /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9F69A2D15CBC6001BA25C /* GifImage.swift */; };
 		59D9F6AD2D15CC12001BA25C /* Carte_club15.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F69D2D15CC12001BA25C /* Carte_club15.gif */; };
 		59D9F6AE2D15CC12001BA25C /* Carte_club10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59D9F69E2D15CC12001BA25C /* Carte_club10.gif */; };
@@ -190,6 +192,8 @@
 		59B16AF22D1618AE00E47F06 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		59B16AF42D16A84C00E47F06 /* GoldWing_ClubAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldWing_ClubAppView.swift; sourceTree = "<group>"; };
 		59B16AF82D16A96600E47F06 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		59BFFDF82D38F7FB00FA8EA7 /* MainStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStartView.swift; sourceTree = "<group>"; };
+		59BFFDFB2D38FB2E00FA8EA7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		59D9F69A2D15CBC6001BA25C /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		59D9F69D2D15CC12001BA25C /* Carte_club15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club15.gif; sourceTree = "<group>"; };
 		59D9F69E2D15CC12001BA25C /* Carte_club10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carte_club10.gif; sourceTree = "<group>"; };
@@ -298,17 +302,13 @@
 				59D9F6C72D15CC9E001BA25C /* Event */,
 				59D9F6992D15CBB1001BA25C /* Club */,
 				59D9F6972D15CACE001BA25C /* Contact */,
+				59BFFDFA2D38FA2A00FA8EA7 /* MainViews */,
 				598EDD792D19EA2600AACC48 /* Images */,
 				597AC6B42D11880400D1DB79 /* GoogleService-Info.plist */,
 				597AC6B22D1187F200D1DB79 /* Info.plist */,
 				597AC6EB2D1189E800D1DB79 /* AppDelegate.swift */,
 				597AC6822D1187DF00D1DB79 /* GoldWing_ClubApp.swift */,
-				59B16AF42D16A84C00E47F06 /* GoldWing_ClubAppView.swift */,
-				597AC6ED2D118A0300D1DB79 /* MainView.swift */,
-				598EDD652D18061200AACC48 /* MainSecureView.swift */,
-				598EDDAF2D24437000AACC48 /* MoreView.swift */,
-				598EDD612D18052D00AACC48 /* AboutView.swift */,
-				598EDD5F2D18051900AACC48 /* HomeView.swift */,
+				59BFFDFB2D38FB2E00FA8EA7 /* Launch Screen.storyboard */,
 				597AC6842D1187DF00D1DB79 /* Persistence.swift */,
 				597AC6892D1187DF00D1DB79 /* ContentView.swift */,
 				597AC68B2D1187E000D1DB79 /* Assets.xcassets */,
@@ -399,6 +399,20 @@
 				598EDD972D21293D00AACC48 /* KatraplaViewModel.swift */,
 			);
 			path = Katrapla;
+			sourceTree = "<group>";
+		};
+		59BFFDFA2D38FA2A00FA8EA7 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				59B16AF42D16A84C00E47F06 /* GoldWing_ClubAppView.swift */,
+				59BFFDF82D38F7FB00FA8EA7 /* MainStartView.swift */,
+				597AC6ED2D118A0300D1DB79 /* MainView.swift */,
+				598EDD652D18061200AACC48 /* MainSecureView.swift */,
+				598EDD5F2D18051900AACC48 /* HomeView.swift */,
+				598EDD612D18052D00AACC48 /* AboutView.swift */,
+				598EDDAF2D24437000AACC48 /* MoreView.swift */,
+			);
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 		59D9F6972D15CACE001BA25C /* Contact */ = {
@@ -618,6 +632,7 @@
 				59D9F6B12D15CC12001BA25C /* Carte_club2.gif in Resources */,
 				59D9F6B82D15CC12001BA25C /* Carte_club1.gif in Resources */,
 				59D9F6B32D15CC12001BA25C /* Carte_club13.gif in Resources */,
+				59BFFDFC2D38FB2E00FA8EA7 /* Launch Screen.storyboard in Resources */,
 				59D9F6BB2D15CC12001BA25C /* Carte_club4.gif in Resources */,
 				597AC6B52D11880400D1DB79 /* GoogleService-Info.plist in Resources */,
 				59D9F6B72D15CC12001BA25C /* Carte_fedefr.gif in Resources */,
@@ -684,6 +699,7 @@
 				59B16AED2D15EFDD00E47F06 /* ContactAnnivListView.swift in Sources */,
 				59D9F6C32D15CC68001BA25C /* ClubRow.swift in Sources */,
 				59B16AF32D1618AE00E47F06 /* EventRow.swift in Sources */,
+				59BFFDF92D38F7FB00FA8EA7 /* MainStartView.swift in Sources */,
 				598EDD852D1FD11500AACC48 /* ClubEditRow.swift in Sources */,
 				597AC6E82D11897D00D1DB79 /* ContactViewModel.swift in Sources */,
 				597AC6EA2D11899700D1DB79 /* DataService.swift in Sources */,
@@ -867,6 +883,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "GoldWing Club/GoldWing_Club.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoldWing Club/Preview Content\"";
@@ -875,24 +892,28 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoldWing Club/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoldWing Club";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-Club";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -907,7 +928,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "GoldWing Club/GoldWing_Club.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoldWing Club/Preview Content\"";
@@ -916,24 +937,28 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoldWing Club/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoldWing Club";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jaffre.GoldWing-Club";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;

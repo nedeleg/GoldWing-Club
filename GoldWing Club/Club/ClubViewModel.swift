@@ -19,15 +19,6 @@ class ClubViewModel: ObservableObject {
     @State var refreshView = false
     @State private var errorMessage: String? = nil
     
-    let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale    = Locale(identifier: "fr")
-        return dateFormatter
-    }()
-    
-    
     func loadAllClubs() {
         isLoading = true
         DataService.shared.fetchAllClubs { fetchedClubs, error in

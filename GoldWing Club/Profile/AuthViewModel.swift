@@ -10,34 +10,36 @@ import Foundation
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import AuthenticationServices // Signin with Apple
 
 class AuthViewModel: ObservableObject {
     static let shared = AuthViewModel()
-
+    
     // Variable publiée pour suivre l'état de l'authentification
     @Published var errorMessage: String? = nil
-
+    
     @Published var isLoginLoading: Bool = false
     @Published var isSaving = false // To show a loading spinner during save
-
+    
     @Published var isUserAuthenticated: Bool = false// User is sign in using Google
     @Published var isUserValidated: Bool = false    // User has been validated by Admin
-    @Published var isUserAdmin: Bool = false        // User is an Admin
+    @Published var isClubAdmin: Bool = false        // User is an Club Admin
+    @Published var isSystemAdmin: Bool = false      // User is an System Admin
 
     @Published var currentUser: User? = nil         // Current Google User
     @Published var currentClubId: String? = nil     // Current Club Id
     @Published var currentClub: Club? = nil         // Define a single Club here
     @Published var currentContact: Contact? = nil   // Define a single Contact here
-
+    
     // Initialisation : Vérification de l'état de l'utilisateur connecté
     private var contactViewModel: ContactViewModel
     init() {
-            self.contactViewModel = ContactViewModel() // Valeur par défaut
-            // Appeler la méthode après avoir initialisé toutes les propriétés
-            checkAuthentication()
-        }
+        self.contactViewModel = ContactViewModel() // Valeur par défaut
+        // Appeler la méthode après avoir initialisé toutes les propriétés
+        checkAuthentication()
+    }
     
-
+    
     // Vérifie si un utilisateur est connecté via Firebase. Si un utilisateur est connecté, ses informations sont stockées dans currentUser.
     func checkAuthentication() {
         if let user = Auth.auth().currentUser {
@@ -62,7 +64,7 @@ class AuthViewModel: ObservableObject {
         
         let config = GIDConfiguration(clientID: clientID)
         
-        GIDSignIn.sharedInstance.signIn(withPresenting: getRootViewController()) { signInResult, error in
+        GIDSignIn.sharedInstance.signIn (withPresenting: getRootViewController()) { signInResult, error in
             if let error = error {
                 print("Error signing in with Google: \(error.localizedDescription)")
                 self.isLoginLoading = false
@@ -74,7 +76,7 @@ class AuthViewModel: ObservableObject {
                 self.isLoginLoading = false
                 return
             }
-
+            
             let idToken = result.user.idToken?.tokenString
             let accessToken = result.user.accessToken.tokenString
             
@@ -93,7 +95,7 @@ class AuthViewModel: ObservableObject {
                         self.errorMessage = "Erreur de connexion : \(error.localizedDescription)"
                         self.isUserAuthenticated = false
                         self.isLoginLoading = false
-
+                        
                     } else if let user = authResult?.user  {
                         
                         print("User \(user) signed in successfully!")
@@ -104,6 +106,58 @@ class AuthViewModel: ObservableObject {
                         // Ajoutez votre logique après la connexion ici
                         // Vérififier si l'utilisateur à un compte validé
                         //self.updateValidationStatus()
+                        
+                        if let currentUID = Auth.auth().currentUser?.uid {
+                            
+                            print ("The currentUID is  \(currentUID)")
+                            print ("The isLoginLoading is  \(self.isLoginLoading)")
+                            
+                            // Check if the user has been validate by the Admin
+                            // and then Load all data from the firebase in the club Cobject
+                            self.updateValidationStatus()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+
+    func handleAppleSignIn(authResults: Result<ASAuthorization, Error>) {
+        
+        isLoginLoading = true
+
+        switch authResults {
+        case .success(let authorization):
+            if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                let idToken = appleIDCredential.identityToken
+                let rawNonce = UUID().uuidString // Generate a nonce
+
+                guard let tokenString = idToken.flatMap({ String(data: $0, encoding: .utf8) }) else {
+                    print("Unable to fetch identity token")
+                    self.isLoginLoading = false
+                    return
+                }
+
+                // Firebase Sign-In with Apple (Updated to use the new method)
+                let credential = OAuthProvider.credential(
+                    providerID: AuthProviderID.apple,
+                    idToken: tokenString,
+                    rawNonce: rawNonce,
+                    accessToken: nil
+                )
+                
+                Auth.auth().signIn (with: credential) { authResult, error in
+                    if let error = error {
+                        print("Firebase Sign-In with Apple failed: \(error.localizedDescription)")
+                        self.isLoginLoading = false
+                        return
+                    }
+                    print("User is signed in with Apple: \(authResult?.user.uid ?? "No UID")")
+
+                    if let user = authResult?.user  {
+                        self.currentUser = user
+                        self.isUserAuthenticated = true
 
                         if let currentUID = Auth.auth().currentUser?.uid {
                             
@@ -117,8 +171,11 @@ class AuthViewModel: ObservableObject {
                     }
                 }
             }
+        case .failure(let error):
+            print("Authorization failed: \(error.localizedDescription)")
         }
     }
+    
     
     func getRootViewController() -> UIViewController {
         guard let scene = UIApplication.shared.connectedScenes
@@ -132,8 +189,12 @@ class AuthViewModel: ObservableObject {
 
 
     // function to prepare an empty content to send to the EditForm
-    func createNewUserContact(_ uid: String) {
-        let newUser = contactViewModel.createNewContact(uid)
+    func createNewUserContact(_ userId: String, _ firstName: String, _ lastName: String, _ email: String, _ photo: String) {
+        var newUser = contactViewModel.createNewContact(userId,"FedeFR")
+        newUser.firstName = firstName
+        newUser.lastName = lastName
+        newUser.email = email
+        newUser.photo = photo
         saveContact(newUser) { success in
             if success {
                 // Close the view on success
@@ -217,7 +278,24 @@ class AuthViewModel: ObservableObject {
 
                                // User is loggendIn and need to be created as blanck user in Firebase
                                isSaving = true
-                               createNewUserContact (currentUID) // Create the blank contact
+                               
+                               let email = Auth.auth().currentUser?.email
+                               
+                               var firstName: String = ""
+                               var lastName: String = ""
+                               var photo: String = ""
+
+                               if let displayName: String = Auth.auth().currentUser?.displayName {
+                                   let fullName = displayName.components(separatedBy: " ")
+                                   firstName = fullName[0]
+                                   lastName = fullName[1].isEmpty ? "" : fullName[1]
+                               }
+                               if let photoUrl = Auth.auth().currentUser?.photoURL {
+                                   photo = photoUrl.absoluteString
+                               }
+
+                               createNewUserContact (currentUID, firstName, lastName , email ?? "", photo) // Create the blank contact
+
                                
                                self.isUserValidated = false
                                self.isLoginLoading = false
@@ -231,12 +309,13 @@ class AuthViewModel: ObservableObject {
                                // Contact is created but user may be waiting for validation
                                self.currentClubId = self.currentContact?.clubId
                                
-                               // if role is not Validation then the user is created and approved by admin
-                               self.isUserValidated = self.currentContact!.role != "Validation" // Exemple de condition
+                               // if role is not Approved then the user is created and waiing for aapproval by admin
+                               self.isUserValidated = self.currentContact!.userStatus == "Approved"
                                
                                // Check role is Admin - Can create & edit contact, Event, Club, Info,...
-                               self.isUserAdmin = self.currentContact!.role == "Admin"
-                               
+                               self.isClubAdmin = self.currentContact!.role == "Admin"
+                               self.isSystemAdmin = self.currentContact!.userProfile == "SystemAdmin"
+
                                if self.isUserValidated {
                                    print ("User has been validated ")
                                    loadTheCurrentClub (clubId: currentClubId!)
@@ -257,6 +336,9 @@ class AuthViewModel: ObservableObject {
                 self.isUserAuthenticated = false
                 self.currentClub = nil
                 self.currentUser = nil
+                self.currentContact = nil
+                self.isClubAdmin = false
+                self.isSystemAdmin = false
                 self.updateValidationStatus()
                 print ("Sign-out in progress")
             }

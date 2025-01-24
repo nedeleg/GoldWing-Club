@@ -14,7 +14,7 @@ struct MoreView: View {
                 List {
                     Section {
                         NavigationLink(destination: InfosListView()) {
-                            Text("News").bold()
+                            Text("Infos").bold()
                         }
                         NavigationLink(destination: KatraplaListView()) {
                             Text("Katrapla").bold()
@@ -28,7 +28,7 @@ struct MoreView: View {
                 }
                 .navigationTitle("Informations")
             }
-
+            
         }
     }
 }

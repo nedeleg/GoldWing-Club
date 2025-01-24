@@ -9,67 +9,65 @@ import SwiftUI
 
 struct InfoDetailView: View {
     var info: Info
-
+    
     var body: some View {
-        
-        ScrollView {
-            VStack (alignment: .leading) {
-                HStack(alignment: .top) {
-
+        List {
+            Section(header: Text("Titre / Source")) {
+                if !info.title.isEmpty {
                     Link("\(info.title)", destination: (URL(string: info.link) ?? URL(string: "#"))!)
                         .font(.title2)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.trailing)
-
-                }
-                Divider()
-                // Display the event name
-                HStack (alignment: .top) {
-                    Image(systemName: "person.fill")
-                        .foregroundColor(.yellow)
-                        .frame(width: 15)
-                    // Display the event name
-                    Text("\(info.auteur)")
-                    Image(systemName: "calendar")
-                        .foregroundColor(.yellow)
-                        .frame(width: 15)
-                    Text(dateFormatter.string(from: info.date) )
-                }
-                Divider()
-                Text("\(info.description)")
-                Divider()
-                HStack {
-                    // Display the contact's photo
-                    if let url = URL(string: info.photo) {
-                        AsyncImage(url: url) { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(alignment: .topLeading)
-                                //.border(.yellow)
-                        } placeholder: {
-                            Image(systemName: "person.crop.circle.fill")
-                                .resizable()
-                                //.foregroundColor(.gray)
-                        }
-                        .cornerRadius(8)
-                    } else {
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .foregroundColor(.gray)
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
-                    }
                     
+                    // Display the event name
+                    HStack {
+                        if !info.auteur.isEmpty {
+                            Image(systemName: "person.fill")
+                                .foregroundColor(.yellow)
+                                .frame(width: 15)
+                            Text("\(info.auteur)")
+                        }
+                        Image(systemName: "calendar")
+                            .foregroundColor(.yellow)
+                            .frame(width: 15)
+                        Text(frenchDateHourFormatter.string(from: info.date) )
+                    }
                 }
-                Divider()
-                Text("\(info.texte)")
             }
-            .padding(20)
+            if !info.description.isEmpty {
+                Section(header: Text("Résumé")) {
+                    Text("\(info.description)")
+                }
+            }
+            
+            // Display the news's photo
+            if let url = URL(string: info.photo) {
+                AsyncImage(url: url) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(alignment: .topLeading)
+                    
+                    //.border(.yellow)
+                } placeholder: {
+                    Image(systemName: "photo.artframe")
+                        .resizable()
+                    //.foregroundColor(.gray)
+                }
+                .cornerRadius(8)
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
 
+            }
+            
+            if !info.texte.isEmpty {
+                Section(header: Text("Contenu")) {
+                    Text("\(info.texte)")
+                }
+            }
         }
-
+        .navigationTitle(info.title.isEmpty ? "Info." : info.title)
     }
+    
 }
 
 

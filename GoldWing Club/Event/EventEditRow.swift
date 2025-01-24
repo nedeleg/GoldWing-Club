@@ -15,7 +15,7 @@ struct EventEditRow: View {
             VStack(alignment: .leading) {
                 Text(event.name)
                     .font(.headline)
-                Text(dateFormatter.string(from: event.date) )
+                Text(frenchDateHourFormatter.string(from: event.startDate) )
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }

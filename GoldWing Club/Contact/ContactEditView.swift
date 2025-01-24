@@ -26,31 +26,81 @@ struct ContactEditView: View {
     //@Binding var mode: EditMode
     //@Binding var isEditMode: Bool
     
+    
     var body: some View {
         VStack  {
             Form {
                 Section(header: Text("Informations personnelles")) {
                     TextField("Prénom", text: $contact.firstName)
                     TextField("Nom", text: $contact.lastName)
-                    
-                    Picker("Club", selection: $contact.clubId) {
-                        ForEach(contactViewModel.clubs) { club in
-                            Text(club.region).tag(club.id)
-                        }
-                    }
+
+                    TextField("Pseudo", text: $contact.nickName)
                     TextField("Titre", text: $contact.title)
+                    
                     Picker("Genre", selection: $contact.gender) {
                         Text("Homme").tag("Homme")
                         Text("Femme").tag("Femme")
                         Text("Autre").tag("Autre")
                     }
-                    DatePicker("Né le ", selection: $contact.birthday,  displayedComponents: .date) // hourAndMinute
+                    DatePicker("Né(e) le ", selection: $contact.birthday,  displayedComponents: .date) // hourAndMinute
                     //Text("Selected Date: \(contact.birthday, formatter: dateFormatter)")
-                    TextField("Adhérent No", text: $contact.uid)
+                }
+                    
+                Section(header: Text("Administration")) {
+
+                    // Only SystemAdmin
+                    // Or User part of a ClubAdmin
+                    if authViewModel.isSystemAdmin || (authViewModel.isClubAdmin && authViewModel.currentClubId == contact.clubId) {
+                        TextField("Adhérent No", text: $contact.uid)
+                        Picker("Role", selection: $contact.role) {
+                            Text("Bureau").tag("Bureau")
+                            Text("Admin").tag("Admin")
+                            Text("Partenaire").tag("Partenaire")
+                            Text("Adhérent").tag("Adhérent")
+                            Text("Sympathisant").tag("Sympathisant")
+                            Text("Autre").tag("Autre")
+                        }
+                        Picker("Status", selection: $contact.userStatus) {
+                            Text("Approved").tag("Approved")
+                            Text("UnApproved").tag("UnApproved")
+                        }
+                    } else {
+                        HStack {
+                            Text ("Adhérent")
+                            Spacer()
+                            Text (contact.uid)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    
+                    // Only SystemAdmin
+                    // or User itself before beeing Approved can update his club
+                    if authViewModel.isSystemAdmin || ((contact.id == authViewModel.currentContact?.id) && contact.userStatus == "UnApproved") {
+                        Picker("Club", selection: $contact.clubId) {
+                            ForEach(contactViewModel.clubs) { club in
+                                Text(club.region)
+                                    .tag(club.id)
+                            }
+                        }
+                    } else {
+                        HStack {
+                            Text ("Club")
+                            Spacer()
+                            let clubRegion = contactViewModel.clubs.first { $0.id == contact.clubId }?.region
+                            Text (clubRegion ?? "")
+                                .foregroundStyle(.primary)
+                                .foregroundColor(.orange)
+                        }
+                    }
+
                 }
                 
                 Section(header: Text("Coordonnées")) {
-                    TextField("Téléphone", text: $contact.phone)
+                    TextField("Tél. Mobile", text: $contact.cellPhone)
+                        .keyboardType(.phonePad)
+                    TextField("Tél. Domicile", text: $contact.homePhone)
+                        .keyboardType(.phonePad)
+                    TextField("Tél. Bureau", text: $contact.workPhone)
                         .keyboardType(.phonePad)
                     TextField("Email", text: $contact.email)
                         .keyboardType(.emailAddress)
@@ -185,12 +235,17 @@ struct ContactEditView_Previews: PreviewProvider {
             uid : "1",
             firstName: "Jean",
             lastName: "Dupont",
+            nickName: "JD",
             clubId: "Club10",
             role: "Bureau",
+            userStatus: "Approved",
+            userProfile: "User",
             title: "Président",
             gender: "M",
             birthday: Date(),
-            phone: "0612345678",
+            cellPhone: "0612345678",
+            homePhone: "0612345678",
+            workPhone: "0612345678",
             email: "jean.dupont@example.com",
             address: "123 Rue Lafayette",
             city: "Paris",

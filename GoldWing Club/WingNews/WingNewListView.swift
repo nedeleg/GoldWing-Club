@@ -42,7 +42,7 @@ struct WingNewListView: View {
                     }
                 }
                 .toolbar {
-                    if authViewModel.isUserAdmin {
+                    if authViewModel.isSystemAdmin {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             NavigationLink(destination: WingNewEditView (wingNew: wingNewViewModel.createNewWingNew (UUID().uuidString) )) {
                                     Image(systemName: "plus")

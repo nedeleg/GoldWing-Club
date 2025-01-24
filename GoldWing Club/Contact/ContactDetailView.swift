@@ -11,10 +11,11 @@ struct ContactDetailView: View {
     @StateObject private var contactViewModel = ContactViewModel()
     
     var contact: Contact
-
+    
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+        List {
+            // Contact Header
+            Section {
                 HStack {
                     // Display the contact's photo
                     if let url = URL(string: contact.photo) {
@@ -43,7 +44,13 @@ struct ContactDetailView: View {
                             .fontWeight(.bold)
                         
                         // Optional notes (e.g., roles in the club)
-                        if !contact.role.isEmpty {
+                        if !contact.nickName.isEmpty {
+                            Text(contact.nickName)
+                                .font(.subheadline)
+                        }
+
+                        // Optional notes (e.g., roles in the club)
+                        if !contact.title.isEmpty {
                             Text(contact.title)
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
@@ -51,66 +58,147 @@ struct ContactDetailView: View {
                         
                         // Optional notes (e.g., roles in the club)
                         if !contact.clubId.isEmpty {
-                            Text(contact.clubId)
+                            let clubRegion = contactViewModel.clubs.first { $0.id == contact.clubId }?.region
+                            Text(clubRegion ?? "")
                                 .font(.headline)
-                                .foregroundStyle(.yellow)
+                                .foregroundStyle(.orange)
                                 .bold()
                         }
                         
                         // Optional notes (e.g., roles in the club)
-                        Text(contactViewModel.dateFormatter.string(from: contact.birthday) )
+                        Text(frenchDateFormatter.string(from: contact.birthday) )
                     }
                     .padding(.leading, 8)
                 }
-                
-                Divider()
-                
-                // Contact Information
-                VStack(alignment: .leading, spacing: 8) {
-                    if !contact.phone.isEmpty {
-                        HStack {
-                            Image(systemName: "person.text.rectangle.fill")
-                                .foregroundColor(.orange)
-                            Text(contact.uid)
+            }
+            
+            // Contact Information
+            Section {
+                if !contact.uid.isEmpty {
+                    HStack {
+                        Image(systemName: "person.text.rectangle.fill")
+                            .foregroundColor(.orange)
+                        Text(contact.uid)
+                            .font(.body)
+                            .foregroundColor(.primary)
+                    }
+                }
+
+                if !contact.cellPhone.isEmpty {
+                    HStack {
+                        Image(systemName: "iphone.gen3")
+                            .foregroundColor(.green)
+                        Menu {
+                            Button(action: {
+                                // Call
+                                if let phoneURL = URL(string: "tel:\(contact.cellPhone)"),
+                                   UIApplication.shared.canOpenURL(phoneURL) {
+                                    UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+                                }
+                            }) {
+
+                                Label("Call", systemImage: "phone.fill")
+                                   
+                            }
+                            .foregroundColor(.green)
+                            
+                            Button(action: {
+                                // SMS
+                                if let smsURL = URL(string: "sms:\(contact.cellPhone)"),
+                                   UIApplication.shared.canOpenURL(smsURL) {
+                                    UIApplication.shared.open(smsURL, options: [:], completionHandler: nil)
+                                }
+                            }) {
+                                Label("Send SMS", systemImage: "message.fill")
+                            }
+                            
+                            Button(action: {
+                                // WhatsApp
+                                let whatsappURL = "https://wa.me/\(contact.cellPhone.filter { $0.isNumber })"
+                                if let url = URL(string: whatsappURL),
+                                   UIApplication.shared.canOpenURL(url) {
+                                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                } else {
+                                    print("WhatsApp is not installed or the URL is invalid.")
+                                }
+                            }) {
+                                Label("Send WhatsApp", systemImage: "paperplane.fill")
+                            }
+                        } label: {
+                            Text(contact.cellPhone)
                                 .font(.body)
                                 .foregroundColor(.primary)
                         }
                     }
-                    if !contact.phone.isEmpty {
-                        HStack {
-                            Image(systemName: "phone.fill")
-                                .foregroundColor(.green)
-                            Text(contact.phone)
+                }
+
+                if !contact.homePhone.isEmpty {
+                    HStack {
+                        Image(systemName: "house.fill")
+                            .foregroundColor(.indigo)
+                        Button(action: {
+                            if let phoneURL = URL(string: "tel:\(contact.homePhone)"),
+                               UIApplication.shared.canOpenURL(phoneURL) {
+                                UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+                            }
+                        }) {
+                            Text(contact.homePhone)
                                 .font(.body)
                                 .foregroundColor(.primary)
                         }
                     }
-                    
-                    if !contact.email.isEmpty {
-                        HStack {
-                            Image(systemName: "envelope.fill")
-                                .foregroundColor(.blue)
+                }
+
+                if !contact.workPhone.isEmpty {
+                    HStack {
+                        Image(systemName: "teletype")
+                            .foregroundColor(.purple)
+                        Button(action: {
+                            if let phoneURL = URL(string: "tel:\(contact.workPhone)"),
+                               UIApplication.shared.canOpenURL(phoneURL) {
+                                UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+                            }
+                        }) {
+                            Text(contact.workPhone)
+                                .font(.body)
+                                .foregroundColor(.primary)
+                        }
+                    }
+                }
+
+                if !contact.email.isEmpty {
+                    HStack {
+                        Image(systemName: "envelope.fill")
+                            .foregroundColor(.blue)
+                        Button(action: {
+                            // Email
+                            if let emailURL = URL(string: "mailto:\(contact.email)"),
+                               UIApplication.shared.canOpenURL(emailURL) {
+                                UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
+                            } else {
+                                print("Email client is not available or the URL is invalid.")
+                            }
+                        }) {
                             Text(contact.email)
                                 .font(.body)
                                 .foregroundColor(.primary)
                         }
                     }
-                    
-                    if !contact.address.isEmpty {
-                        HStack {
-                            Image(systemName: "house.fill")
-                                .foregroundColor(.orange)
+                }
+                
+
+                HStack (alignment: .top){
+                    Image(systemName: "house.fill")
+                        .foregroundColor(.orange)
+
+                    VStack (alignment: .leading) {
+                        if !contact.address.isEmpty {
                             Text(contact.address)
                                 .font(.body)
                                 .foregroundColor(.primary)
                         }
-                    }
-                    
-                    HStack {
-                        if !contact.postalCode.isEmpty {
-                            HStack {
-                                Spacer()
-                                    .frame(width: 33)
+                        HStack {
+                            if !contact.postalCode.isEmpty {
                                 Text(contact.postalCode)
                                     .font(.body)
                                     .foregroundColor(.primary)
@@ -122,37 +210,32 @@ struct ContactDetailView: View {
                                 }
                             }
                         }
-                    }
-                    if !contact.country.isEmpty {
-                        HStack {
-                            Image(systemName: "globe.europe.africa.fill")
-                                .foregroundColor(.blue)
-                            Text(contact.country)
-                                .font(.body)
-                                .foregroundColor(.primary)
+                        if !contact.country.isEmpty {
+                                Text(contact.country)
+                                    .font(.body)
+                                    .foregroundColor(.primary)
                         }
+
                     }
-                    
-                    if !contact.notes.isEmpty {
-                        HStack {
-                            Image(systemName: "list.clipboard.fill")
-                                .foregroundColor(.yellow)
-                            Text(contact.notes)
-                                .font(.body)
-                                .foregroundColor(.primary)
-                        }
-                    }
-                    
-                    
                 }
             }
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemBackground)).shadow(radius: 2))
-            .padding(.horizontal)
-            .navigationTitle("\(contact.firstName) \(contact.lastName)")
             
-            Spacer()
+            // Contact Notes
+            Section {
+                if !contact.notes.isEmpty {
+                    HStack (alignment: .top) {
+                        Image(systemName: "list.clipboard.fill")
+                            .foregroundColor(.yellow)
+                        Text(contact.notes)
+                            .font(.body)
+                            .foregroundColor(.primary)
+                    }
+                }
+            }
+            
         }
+        .navigationTitle("\(contact.firstName) \(contact.lastName)")
+        .onAppear {contactViewModel.loadAllClubs() }
     }
     
 }
@@ -164,12 +247,17 @@ struct ContactDetailView_Previews: PreviewProvider {
             uid : "1",
             firstName: "Jean",
             lastName: "Dupont",
+            nickName: "JD",
             clubId: "Club10",
             role: "Bureau",
+            userStatus: "Approved",
+            userProfile: "User",
             title: "Président",
             gender: "M",
             birthday: Date(),
-            phone: "0612345678",
+            cellPhone: "0612345678",
+            homePhone: "0612345678",
+            workPhone: "0612345678",
             email: "jean.dupont@example.com",
             address: "123 Rue Lafayette",
             city: "Paris",

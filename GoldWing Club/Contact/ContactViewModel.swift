@@ -15,6 +15,7 @@ class ContactViewModel: ObservableObject {
     @Published var contacts: [Contact] = []
     @Published var isLoading = false
     @Published var isContactSaving = false
+    @Published var isContactDeleting = false
     @Published var isAddingContact = false  // Check if we're asking to add a new contact
 
     @Published var clubs: [Club] = [] // to populate the Club Picker in ContactEditView
@@ -37,16 +38,7 @@ class ContactViewModel: ObservableObject {
             }
         }
     }
-    
-    let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale    = Locale(identifier: "fr")
-        return dateFormatter
-    }()
-    
-    
+        
     func loadAllContacts() {
         isLoading = true
         DataService.shared.fetchAllContacts { contacts in
@@ -80,8 +72,8 @@ class ContactViewModel: ObservableObject {
                 self.errorMessage = error.localizedDescription
             } else {
                 self.contacts = fetchedContacts ?? []
-                self.isLoading = false
             }
+            self.isLoading = false
         }
     }
 
@@ -92,25 +84,30 @@ class ContactViewModel: ObservableObject {
                 self.errorMessage = error.localizedDescription
             } else {
                 self.contacts = fetchedContacts ?? []
-                self.isLoading = true
             }
+            self.isLoading = false
         }
     }
 
     
     // function to prepare an empty content to send to the EditForm
-    func createNewContact(_ id: String) -> Contact {
+    func createNewContact(_ id: String, _ clubId: String) -> Contact {
         let newContact = Contact(
             id: id,
             uid: "",
             firstName: "",
             lastName: "",
-            clubId: "Club10",
-            role: "Validation",
+            nickName: "",
+            clubId: clubId,
+            role: "Adhérent",
+            userStatus: "UnApproved",
+            userProfile: "User",
             title: "",
             gender: "Homme",
             birthday: Date(),
-            phone: "",
+            cellPhone: "",
+            homePhone: "",
+            workPhone: "",
             email: "",
             address: "",
             city: "",
@@ -174,20 +171,55 @@ class ContactViewModel: ObservableObject {
         }
 
     }
-            
+/*
     func deleteContact(by ContactId: String) {
+        self.isContactDeleting = true
         DataService.shared.deleteProfileImage (withId: ContactId) { success in
             if success {
-                    print ("Photo for \(ContactId) deleted")
-                }
+                print ("Photo for \(ContactId) deleted")
+            }
         }
-
         DataService.shared.deleteContact (withId: ContactId) { success in
             if success {
                 if let index = self.contacts.firstIndex(where: { $0.id == ContactId }) {
                     self.contacts.remove(at: index)
                     print ("\(ContactId) deleted")
                 }
+            }
+            self.isContactDeleting = false
+        }
+    }
+*/
+    func deleteContact(by contactId: String, completion: @escaping (Bool) -> Void ) {
+        self.isContactDeleting = true
+        
+        let dispatchGroup = DispatchGroup()
+        
+        // Attempt to delete the profile image
+        dispatchGroup.enter()
+        DataService.shared.deleteProfileImage(withId: contactId) { success in
+            if success {
+                print("Photo for \(contactId) deleted")
+                dispatchGroup.leave() // Ensure we continue regardless of success or failure
+            } else {
+                print("No photo to delete or failed to delete photo for \(contactId)")
+                dispatchGroup.leave() // Ensure we continue regardless of success or failure
+            }
+        }
+        // Once the profile image deletion is handled, proceed to delete the contact
+        dispatchGroup.notify(queue: .main) {
+            DataService.shared.deleteContact(withId: contactId) { success in
+                if success {
+                    if let index = self.contacts.firstIndex(where: { $0.id == contactId }) {
+                        self.contacts.remove(at: index)
+                        print("\(contactId) deleted")
+                    }
+                    completion(true)
+                } else {
+                    print("Failed to delete contact \(contactId)")
+                    completion(false)
+                }
+                self.isContactDeleting = false
             }
         }
     }

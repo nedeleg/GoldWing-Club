@@ -18,13 +18,11 @@ struct WingNewEditView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Informations principales")) {
+            Section(header: Text("Noméro WingNews")) {
+                TextField("Numéro", text: $wingNew.numero)
                 TextField("Titre", text: $wingNew.title)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("url_source", text: $wingNew.url_source)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("photo", text: $wingNew.photo)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 DatePicker("Date", selection: $wingNew.date,  displayedComponents: .date)
             }
             
@@ -78,6 +76,7 @@ struct WingNewEditView: View {
 #Preview {
     WingNewEditView (wingNew: WingNew (
         id: "0",
+        numero : "1",
         title: "Gold News Avril 1987",
         url_source : "https://www.calameo.com/books/004526907a1cd0f6663ff",
         photo : "https://i.calameoassets.com/201229194556-a8c542e90e42d34f8f840d3b20f6b535/large.jpg",

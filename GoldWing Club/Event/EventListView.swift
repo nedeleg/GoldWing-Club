@@ -9,7 +9,8 @@ import SwiftUI
 
 struct EventListView: View {
     @StateObject private var eventViewModel = EventViewModel()
-    
+    @EnvironmentObject var authViewModel: AuthViewModel
+
     var clubId : String     // Club to filter Events
     var eventType: String   // EventType to filter Events
     @State private var errorMessage: String?
@@ -43,13 +44,18 @@ struct EventListView: View {
 
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: EventEditView (event: eventViewModel.createNewEvent( UUID().uuidString, eventType, clubId ) ))  {
+                // Either SystemAdmin
+                // or a Member of the club can create an Event in a club
+                if (authViewModel.isSystemAdmin || clubId == authViewModel.currentClubId) {
+                    let creator = authViewModel.currentContact?.id
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: EventEditView (event: eventViewModel.createNewEvent( UUID().uuidString, eventType, clubId, creator ?? "") ))  {
                             Image(systemName: "plus")
+                        }
                     }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton().padding(.trailing, 20)
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton().padding(.trailing, 20)
+                    }
                 }
             }
             .environment(\.editMode, $mode) //< -- Here

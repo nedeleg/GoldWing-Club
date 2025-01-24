@@ -8,6 +8,8 @@
 import Foundation
 
 import SwiftUI
+import EventKit // To create event in local Calendar
+
 
 
 class EventViewModel: ObservableObject {
@@ -40,7 +42,7 @@ class EventViewModel: ObservableObject {
                 self.events = fetchedEvents ?? []
 
                 self.events.sort(by: { element1, element2 in
-                    let comparisonResult = element1.date.compare(element2.date)
+                    let comparisonResult = element1.startDate.compare(element2.startDate)
                     return comparisonResult == .orderedDescending
                 })
             }
@@ -56,7 +58,7 @@ class EventViewModel: ObservableObject {
                 self.events = fetchedEvents ?? []
 
                 self.events.sort(by: { element1, element2 in
-                    let comparisonResult = element1.date.compare(element2.date)
+                    let comparisonResult = element1.startDate.compare(element2.startDate)
                     return comparisonResult == .orderedDescending
                 })
             }
@@ -89,13 +91,15 @@ class EventViewModel: ObservableObject {
 */
 
     // function to prepare an empty content to send to the EditForm
-    func createNewEvent (_ id: String, _ eventType: String, _ clubId: String ) -> Event {
+    func createNewEvent (_ id: String, _ eventType: String, _ clubId: String, _ contactId: String) -> Event {
         let newEvent = Event (
             id: id,
             clubId: clubId,
             eventType: eventType,
             name: "",
-            date: Date(),
+            startDate: Date(),
+            endDate: Date().addingTimeInterval (TimeInterval( 60*60 )), // Add an hour by default
+            createdBy: contactId,
             description: "",
             photo: "",
             fichierInscription: "",
@@ -164,7 +168,39 @@ class EventViewModel: ObservableObject {
         }
     }
 
-    
+
+    func addEventToCalendar(title: String, startDate: Date, endDate: Date, completion: @escaping (Bool, Error?) -> Void) {
+        let eventStore = EKEventStore()
+        
+        // Request access to the calendar
+        eventStore.requestAccess(to: .event) { granted, error in
+            if let error = error {
+                completion(false, error)
+                return
+            }
+            
+            guard granted else {
+                completion(false, nil)
+                return
+            }
+            
+            // Create the event
+            let event = EKEvent(eventStore: eventStore)
+            event.title     = title
+            event.startDate = startDate
+            event.endDate   = endDate
+            event.calendar  = eventStore.defaultCalendarForNewEvents
+            
+            // Save the event
+            do {
+                try eventStore.save(event, span: .thisEvent)
+                completion(true, nil)
+            } catch {
+                completion(false, error)
+            }
+        }
+    }
+
     
 }
 

@@ -30,6 +30,7 @@ class InfoViewModel: ObservableObject {
     
     func loadInfos() {
         print ("isInfoLoading Start: \(self.isInfoLoading)")
+        self.isInfoLoading = true
         DataService.shared.fetchAllInfos { fetchedInfos, error in
             if let error = error {
                 self.errorMessage = error.localizedDescription

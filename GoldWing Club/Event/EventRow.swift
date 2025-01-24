@@ -28,7 +28,7 @@ struct EventRow: View {
                 Text(event.name)
                     .font(.headline)
                 
-                Text("\(event.date)")
+                Text(frenchDateHourFormatter.string(from: event.startDate) )
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
@@ -43,7 +43,9 @@ struct EventRow: View {
          clubId: "String",
          eventType : "String",
          name: "String",
-         date: try! Date("2022-02-14T20:15:00Z", strategy: .iso8601),
+         startDate: Date(),
+         endDate: Date().addingTimeInterval (TimeInterval( 60 )),
+         createdBy: "Auteur",
          description :"String",
          photo: "String",
          fichierInscription: "String",

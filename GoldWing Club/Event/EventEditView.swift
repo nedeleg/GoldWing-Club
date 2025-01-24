@@ -22,7 +22,6 @@ struct EventEditView: View {
             Form {
                 Section(header: Text("Informations principales")) {
                     TextField("Nom de l'événement", text: $event.name)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Picker("Type d'événement", selection: $event.eventType) {
                         ForEach(eventViewModel.eventTypes, id: \.self) { eventType in
@@ -30,13 +29,14 @@ struct EventEditView: View {
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
+                    
+                    DatePicker("Date", selection: $event.startDate, displayedComponents: [.date, .hourAndMinute])
 
-                    DatePicker("Date", selection: $event.date, displayedComponents: [.date, .hourAndMinute])
-                    // DatePicker("Date", selection: $event.date,  displayedComponents: .date)
+                    DatePicker("Fin", selection: $event.endDate, displayedComponents: [.date, .hourAndMinute])
+                    // DatePickerFin
                 }
                 
                 Section(header: Text("Détails")) {
-                    
                     TextField("Description", text: $event.description)
                         .multilineTextAlignment(.leading)
                         .lineLimit(4)
@@ -45,8 +45,13 @@ struct EventEditView: View {
                         .overlay {
                             TextEditor(text: $event.description)
                         }
-
+                }
                     
+                Section(header: Text("Photo")) {
+                    TextField("Lien photo", text: $event.photo)
+                }
+
+/*
                     Button(action: {
                         showPhotoPicker.toggle()
                     }) {
@@ -59,8 +64,8 @@ struct EventEditView: View {
                             }
                         }
                     }
-                }
-                
+
+ */
                 Section(header: Text("Inscriptions")) {
                     TextField("Fichier d'inscription", text: $event.fichierInscription)
                     TextField("Formulaire d'inscription", text: $event.inscriptionForm)
@@ -116,6 +121,9 @@ struct EventEditView: View {
         .onAppear {eventViewModel.loadAllEventTypes() }
     }
     
+
+
+
     func didDismiss() {
         dismiss()
         // Handle the dismissing action.
@@ -130,7 +138,9 @@ struct EventEditView: View {
         clubId: "Club10",
         eventType : "Sortie",
         name: "Carabalade 2024",
-        date: Date(),
+        startDate: Date(),
+        endDate: Date().addingTimeInterval (TimeInterval( 60 ) ),
+        createdBy: "Auteur",
         description: "Un sondage a été mis en place afin de vous inscrire pour la Carabalade au profit des orphelins des Sapeurs Pompiers qui aura lieu le 12 Décembre 2024. Le rendez-vous est fixé à 19 heures Place Saint Emilion 75012 PARIS pour un petit repas avant la balade.Comme habituellement un habit festif est souhaité pour cette balade qui traversera Paris, n'oubliez pas un cadeau au profit des orphelins que vous donnerez en fin de parcours. Cette balade n'est pas organisée par notre club.",
         photo: "https://www.parisetoilechapter.fr/images/actualites/659e8521610390.63296758.jpg",
         fichierInscription: "String",

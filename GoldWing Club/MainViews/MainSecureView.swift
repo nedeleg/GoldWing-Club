@@ -16,11 +16,11 @@ struct MainSecureView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label("Accueil", systemImage: "house.fill")
                 }
             ProfileView()
                 .tabItem {
-                    Label("Profile", systemImage: "person.badge.key.fill")
+                    Label("Profil", systemImage: "person.badge.key.fill")
                 }
             ContactListView()
                 .tabItem {
@@ -32,7 +32,7 @@ struct MainSecureView: View {
                 }
             MoreView()
                 .tabItem {
-                    Label("More", systemImage: "newspaper.fill")
+                    Label("Infos", systemImage: "newspaper.fill")
                 }
         }
     }

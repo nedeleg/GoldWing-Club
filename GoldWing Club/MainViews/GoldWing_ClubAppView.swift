@@ -13,15 +13,14 @@ struct GoldWing_ClubAppView: View {
     var body: some View {
         
         let _ = print("Load GoldWing_ClubAppView")
-
+        
         if authViewModel.isSaving || authViewModel.isLoginLoading {
-            ProgressView("Saving new user in GoldWing_ClubAppView ...")
+            ProgressView("GoldWing Club démarre...")
         } else {
             Group {
                 // User is authenticated and validated
                 if let club = authViewModel.currentClub {
-                    let _ = print ("Welcome to \(club.name), Region: \(club.region)")
-                    MainSecureView(club: club ).environmentObject(authViewModel)
+                    MainSecureView (club: club ).environmentObject(authViewModel)
                     // User is authenticated
                 } else if authViewModel.isUserAuthenticated {
                     let _ = print("User is Authenticated without and account ...")

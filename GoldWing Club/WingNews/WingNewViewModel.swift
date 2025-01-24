@@ -62,6 +62,7 @@ class WingNewViewModel: ObservableObject {
     func createNewWingNew (_ id: String) -> WingNew {
         let newWingNew = WingNew (
             id: id,
+            numero: "",
             title: "",
             url_source: "",
             photo: "",

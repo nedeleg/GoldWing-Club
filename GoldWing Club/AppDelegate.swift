@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Configuration de Firebase
         FirebaseApp.configure()
+
         AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory()) // Use Debug provider during development
 
         // Set yellow color as default for Toolbar title in all the app

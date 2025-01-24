@@ -18,13 +18,11 @@ struct KatraplaEditView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Informations principales")) {
+            Section(header: Text("Numéro Katrapla")) {
+                TextField("Numéro", text: $katrapla.numero)
                 TextField("Titre", text: $katrapla.title)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("url_source", text: $katrapla.url_source)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("photo", text: $katrapla.photo)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 DatePicker("Date", selection: $katrapla.date,  displayedComponents: .date)
             }
             
@@ -80,6 +78,7 @@ struct KatraplaEditView: View {
 #Preview {
     KatraplaEditView (katrapla: Katrapla (
         id: "0",
+        numero : "1",
         title: "Katrapla 001 - 1981",
         url_source : "https://www.calameo.com/books/00452690731446eb43436",
         photo : "https://i.calameoassets.com/170504202135-b1a2708eada340fbd36ecab29923a2c8/large.jpg",

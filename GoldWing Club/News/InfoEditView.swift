@@ -10,7 +10,7 @@ import SwiftUI
 struct InfoEditView: View {
     @StateObject private var infoViewModel = InfoViewModel()
     @Environment(\.dismiss) var dismiss
-
+    
     @State var info: Info
     
     @State private var isInfoSaving = false // To show a loading spinner during save
@@ -22,11 +22,12 @@ struct InfoEditView: View {
         Form {
             Section(header: Text("Informations principales")) {
                 TextField("Titre", text: $info.title)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("auteur", text: $info.auteur)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                DatePicker("Date", selection: $info.date,  displayedComponents: .date)
-                
+                TextField("Auteur", text: $info.auteur)
+
+                DatePicker("Date", selection: $info.date, displayedComponents: [.date, .hourAndMinute])
+            }
+            
+            Section(header: Text("Résumé")) {
                 TextField("Texte", text: $info.description)
                     .multilineTextAlignment(.leading)
                     .lineLimit(4)
@@ -35,14 +36,11 @@ struct InfoEditView: View {
                     .overlay {
                         TextEditor(text: $info.description)
                     }
-
             }
             
+            TextField("Lien photo", text: $info.photo)
+            
             Section(header: Text("Contenu")) {
-                
-                TextField("photo", text: $info.photo)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-
                 TextField("Texte", text: $info.texte)
                     .multilineTextAlignment(.leading)
                     .lineLimit(6)
@@ -51,11 +49,9 @@ struct InfoEditView: View {
                     .overlay {
                         TextEditor(text: $info.texte)
                     }
-
-
-                TextField("Link", text: $info.link)
-                
             }
+            
+            TextField("Lien", text: $info.link)
             
         }
         .navigationTitle("Modifier l'info")
@@ -109,7 +105,7 @@ struct InfoEditView: View {
         dismiss()
         // Handle the dismissing action.
     }
-
+    
 }
 
 

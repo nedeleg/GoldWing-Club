@@ -28,7 +28,7 @@ struct InfoRow: View {
                 Text(info.title)
                     .font(.headline)
                 
-                Text(dateFormatter.string(from: info.date) )
+                Text(frenchDateHourFormatter.string(from: info.date) )
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }

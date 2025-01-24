@@ -61,6 +61,7 @@ class KatraplaViewModel: ObservableObject {
     func createNewKatrapla (_ id: String) -> Katrapla {
         let newKatrapla = Katrapla (
             id: id,
+            numero: "",
             title: "",
             url_source: "",
             photo: "",

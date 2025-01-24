@@ -41,7 +41,7 @@ struct KatraplaListView: View {
                         }
                     }
                     .toolbar {
-                        if authViewModel.isUserAdmin {
+                        if authViewModel.isSystemAdmin {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 NavigationLink(destination: KatraplaEditView (katrapla: katraplaViewModel.createNewKatrapla(UUID().uuidString) )) {
                                         Image(systemName: "plus")

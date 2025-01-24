@@ -21,7 +21,9 @@ struct ClubListView: View {
             VStack {
                 List {
                     ForEach(clubViewModel.clubs) { club in
-                        if mode == .active {
+                        // Check the user is either a SystemAdmin
+                        // or a ClubAdmin who can update only his club
+                        if mode == .active && (authViewModel.isSystemAdmin || (authViewModel.isClubAdmin && club.id == authViewModel.currentClubId) ) {
                             ZStack {
                                     NavigationLink("", destination: ClubEditView (club: club) )
                                     .opacity(0)
@@ -38,7 +40,7 @@ struct ClubListView: View {
                     //.onDelete(perform: clubViewModel.deleteClub)
                 }
                 .toolbar {
-                    if authViewModel.isUserAdmin {
+                    if authViewModel.isSystemAdmin || authViewModel.isClubAdmin {
                         ToolbarItem (placement: .navigationBarTrailing) {
                             EditButton().padding(.trailing, 20)
                         }
