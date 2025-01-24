@@ -43,22 +43,21 @@ struct EventDetailView: View {
                     }
                 }
 
-/*
                 HStack(alignment: .top) {
-                    if !event.createdBy.isEmpty {
-                        Image(systemName: "person.text.rectangle")
+                    if !event.lieu.isEmpty {
+                        Image("location.fill") // Pass club.id to the
                             .resizable()
                             .scaledToFit()
-                            .foregroundColor(.purple)
+                            .foregroundColor(.yellow)
                             .frame(width: 25, height: 25)   // Set image size
-                            .padding(.trailing,0)
-
-                        Text("\(event.createdBy)")
+                            .padding(.trailing,5)
+                        
+                        Text("\(event.lieu)")
                             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             .fontWeight(.bold)
                     }
                 }
-*/
+
                 
                 HStack(alignment: .top) {
                     Image(systemName: "calendar.badge.plus")
@@ -141,11 +140,31 @@ struct EventDetailView: View {
                 }
             }                
         }
+        .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        ShareLink(item: createShareableText(), subject: Text("Invitation à un événement"), message: Text("Viens découvrir cet événement génial !")) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                    }
+                }
         .navigationTitle("\(event.eventType)")
         //.onAppear {  contactViewModel.loadContact(event.createdBy) }
 
         
     }
+    
+    // Fonction pour générer le texte à partager
+    func createShareableText() -> String {
+        """
+        📅 **\(event.name)**
+        🗓 Date : \(frenchDateHourFormatter.string(from: event.startDate))
+        📍 Lieu : \(event.lieu)
+        ℹ️ Description : \(event.description)
+        
+        Rejoins-nous pour cet événement !
+        """
+    }
+    
 }
 
 #Preview {
@@ -154,6 +173,7 @@ struct EventDetailView: View {
         clubId: "Club10",
         eventType : "Sortie",
         name: "Carabalade 2024",
+        lieu: "Paris",
         startDate: Date(),
         endDate: Date().addingTimeInterval (TimeInterval( 60 )),
         createdBy: "Auteur",
