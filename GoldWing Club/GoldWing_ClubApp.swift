@@ -117,6 +117,7 @@ struct Event: Identifiable {
     var clubId : String
     var eventType : String
     var name: String
+    var lieu: String
     var startDate: Date
     var endDate: Date
     var createdBy: String
